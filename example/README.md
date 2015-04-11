@@ -1,5 +1,5 @@
 # Example details
-
+Please refer guide and javadocs for more information on android code.
 
 ## Contributing
 
