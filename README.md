@@ -21,6 +21,12 @@ Please refer to prerequisites document for
 *	API Key, secret and merchant token generation for sandbox/test region
 *	Download SDK from GitHub
 
+# TokenBased Transactions (NEW) - 
+*	Generate Token with ta_token - auth false - POST API
+*	Generate Token with ta_token - auth true - POST API
+*	Generate Token without  ta_token & auth -  - POST API with 0$ Auth
+*	Generate Token - Backward compatible -  POST API call
+
 For more information on step by step integration, please refer our Integration Guide
 
 # Getting Started with Payeezy
