@@ -1,6 +1,21 @@
 # Example details
 Please refer guide and javadocs for more information on android code.
 
+Payeezy Android configrations:
+<div><img src="https://raw.githubusercontent.com/payeezy/payeezy_android/master/guide/images/android%20studio%20with%20payeezy%20config.png" alt="sample app"/></div>
+
+lib dependencies:
+<div><img src="https://raw.githubusercontent.com/payeezy/payeezy_android/master/guide/images/payeezy_android_sample_lib.png" alt="sample app"/></div>
+
+sample properties:
+<div><img src="https://raw.githubusercontent.com/payeezy/payeezy_android/master/guide/images/payeezy_android_sample_properties.png" alt="sample app"/></div>
+
+
+Android app:How ro run the app ?? 
+<div><img src="https://raw.githubusercontent.com/payeezy/payeezy_android/master/guide/images/payeezy_android_sample_full_scrn.png" alt="sample app"/></div>
+
+
+
 ## Contributing
 
 1. Fork it 
