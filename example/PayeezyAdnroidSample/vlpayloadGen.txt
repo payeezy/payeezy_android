@@ -1,0 +1,3 @@
+{"amount":"1100","currency_code":"USD","valuelink":{"cc_number":"7777045839985463","cardholder_name":"Joe Smith","credit_card_type":"Gift","name":"Joe Smith","type":"Gift"},"method":"valuelink","transaction_type":"PURCHASE"}
+
+generated

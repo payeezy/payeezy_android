@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.sampleapp6.MainActivity" >
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+
+</menu>
+<!-- From: file:/Users/f9hj8jh/Documents/firstdata/projects/payeezy/june20_release/deliver_July_1_after_cert_OK/payeezy_android/example/PayeezyAdnroidSample/res/menu/main.xml -->
