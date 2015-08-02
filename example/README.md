@@ -2,7 +2,7 @@
 Please refer guide and javadocs for more information on android code.
 
 Payeezy Android configrations:
-<div><img src="https://raw.githubusercontent.com/payeezy/payeezy_android/master/guide/images/android%20studio%20with%20payeezy%20config.png" alt="sample app"/></div>
+<div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/android%20studio%20with%20payeezy%20config.png" alt="sample app"/></div>
 
 lib dependencies:
 <div><img src="https://raw.githubusercontent.com/payeezy/payeezy_android/master/guide/images/payeezy_android_sample_lib.png" alt="sample app"/></div>
