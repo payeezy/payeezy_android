@@ -1,3 +1,7 @@
+# Purpose of PostTokenisedCreditCard payeezyclientsample
+This sample application demonstrates the usage of tokenised creditcardvisa transactions 
+
+
 # Example details
 Please refer guide and javadocs for more information on android code.
 
