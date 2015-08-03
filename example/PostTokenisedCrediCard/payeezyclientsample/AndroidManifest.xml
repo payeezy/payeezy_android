@@ -181,7 +181,7 @@
  <!--android:debuggable="true"-->
 
     <activity
-        android:name="com.example.com.example.payeezyclient.MainActivity"
+        android:name="com.example.payeezyclient.MainActivity"
         android:label="@string/app_name" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -190,7 +190,7 @@
         </intent-filter>
     </activity>
     <activity
-        android:name="com.example.com.example.payeezyclient.NavMainActivity"
+        android:name="com.example.payeezyclient.NavMainActivity"
         android:label="@string/title_activity_nav_main" >
     </activity>
 </application>
