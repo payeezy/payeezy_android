@@ -1,9 +1,8 @@
 # Payeezy Android SDK
 
-Quickly integrate Payeezy from First Data into your Android apps.
+Quickly integrate Payeezy from First Data into your Android application.
 
 If you want to enable secure and convenient payments in your Android app this guide will get you up and running within minutes. The Payeezy Service from First Data was created to simplify your integration with Android. Payeezy handles all the heavy lifting of the complex cryptography that protects your customers’ transactions. It also makes it super simple to create a developer test account and even apply for a merchant account all through our developer portal.
-
 
 # Minimum technical requirements
 *	The Payeezy android mobile SDK requires android OS 4.0 ice cream sandwich or higher (API level 14 or higher).
