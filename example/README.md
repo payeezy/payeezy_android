@@ -24,9 +24,9 @@ Sample - lib dependencies:
 
 Sample properties:
 <div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezy_android_sample_properties.png" alt="sample app"/></div>
-
+The UI screen for Token Generation using GET Method 
 <div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezyandroidUIScreen.png" alt="sample app"/></div>
-
+The sample response for the Authorise transaction
 <div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/PayeezyAndroidAuthorise.png" alt="sample app"/></div>
 
 ## Contributing
