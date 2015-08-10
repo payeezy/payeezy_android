@@ -39,13 +39,23 @@
       <file leaf-file-name="FirstAPIClientV2Helper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/firstdata/firstapi/client/FirstAPIClientV2Helper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.36">
-              <caret line="1277" column="48" selection-start-line="1277" selection-start-column="48" selection-end-line="1277" selection-end-column="48" />
+            <state vertical-scroll-proportion="-15.84">
+              <caret line="1575" column="53" selection-start-line="1575" selection-start-column="53" selection-end-line="1575" selection-end-column="53" />
               <folding>
                 <element signature="e#60213#60233#0" expanded="true" />
                 <element signature="e#62615#62635#0" expanded="true" />
                 <element signature="e#64359#64379#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnvCat.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/payeezyclient/EnvCat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,11 +73,11 @@
       <file leaf-file-name="RequestTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/payeezyclient/RequestTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5511222">
-              <caret line="6594" column="38" selection-start-line="6594" selection-start-column="38" selection-end-line="6594" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.67830426">
+              <caret line="7300" column="8" selection-start-line="7300" selection-start-column="8" selection-end-line="7300" selection-end-column="8" />
               <folding>
-                <element signature="e#436655#436877#0" expanded="true" />
-                <element signature="e#436876#436877#0" expanded="true" />
+                <element signature="e#442949#443171#0" expanded="true" />
+                <element signature="e#443170#443171#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,10 +121,11 @@
       <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.62069">
-              <caret line="132" column="24" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
+            <state vertical-scroll-proportion="-13.5172415">
+              <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
               <folding>
                 <element signature="e#5570#5599#0" expanded="true" />
+                <element signature="e#6102#6128#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -897,8 +908,8 @@
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/com/firstdata/firstapi/client/domain/v2/TransactionResponse.java" />
         <option value="$PROJECT_DIR$/src/com/example/payeezyclient/MainActivity.java" />
-        <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/src/com/firstdata/firstapi/client/FirstAPIClientV2Helper.java" />
+        <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/src/com/example/payeezyclient/RequestTask.java" />
       </list>
     </option>
@@ -1337,7 +1348,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/example/payeezyclient/RequestTask.java</url>
-          <line>6518</line>
+          <line>6527</line>
           <properties class="com.example.payeezyclient.RequestTask" method="CallAuthorizeVisaGetGetToken" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
@@ -1367,7 +1378,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/example/payeezyclient/RequestTask.java</url>
-          <line>7115</line>
+          <line>7124</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -1377,36 +1388,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/firstdata/firstapi/client/domain/v2/Token_data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#964#965#0" expanded="false" />
-            <element signature="e#980#981#0" expanded="false" />
-            <element signature="e#1018#1019#0" expanded="false" />
-            <element signature="e#1038#1039#0" expanded="false" />
-            <element signature="e#1070#1071#0" expanded="false" />
-            <element signature="e#1088#1089#0" expanded="false" />
-            <element signature="e#1130#1131#0" expanded="false" />
-            <element signature="e#1154#1155#0" expanded="false" />
-            <element signature="e#1189#1190#0" expanded="false" />
-            <element signature="e#1210#1211#0" expanded="false" />
-            <element signature="e#1258#1259#0" expanded="false" />
-            <element signature="e#1288#1289#0" expanded="false" />
-            <element signature="e#1330#1331#0" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1420#1421#0" expanded="false" />
-            <element signature="e#1464#1465#0" expanded="false" />
-            <element signature="e#1495#1496#0" expanded="false" />
-            <element signature="e#1512#1513#0" expanded="false" />
-            <element signature="e#1552#1553#0" expanded="false" />
-            <element signature="e#1574#1575#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/firstdata/firstapi/client/domain/v2/Transarmor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1438,8 +1419,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6580" column="64" selection-start-line="6580" selection-start-column="64" selection-end-line="6580" selection-end-column="64" />
           <folding>
-            <element signature="e#436655#436877#0" expanded="true" />
-            <element signature="e#436876#436877#0" expanded="true" />
+            <element signature="e#442949#443171#0" expanded="true" />
+            <element signature="e#443170#443171#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1570,8 +1551,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6577" column="64" selection-start-line="6577" selection-start-column="64" selection-end-line="6577" selection-end-column="64" />
           <folding>
-            <element signature="e#436655#436877#0" expanded="true" />
-            <element signature="e#436876#436877#0" expanded="true" />
+            <element signature="e#442949#443171#0" expanded="true" />
+            <element signature="e#443170#443171#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1607,8 +1588,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6568" column="17" selection-start-line="6568" selection-start-column="17" selection-end-line="6568" selection-end-column="17" />
           <folding>
-            <element signature="e#436655#436877#0" expanded="true" />
-            <element signature="e#436876#436877#0" expanded="true" />
+            <element signature="e#442949#443171#0" expanded="true" />
+            <element signature="e#443170#443171#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1731,8 +1712,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#436655#436877#0" expanded="true" />
-            <element signature="e#436876#436877#0" expanded="true" />
+            <element signature="e#442949#443171#0" expanded="true" />
+            <element signature="e#443170#443171#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1960,19 +1941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.62069">
-          <caret line="132" column="24" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
-          <folding>
-            <element signature="e#5570#5599#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/firstdata/firstapi/client/domain/v2/TransactionResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2010,10 +1978,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.5172415">
+          <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
+          <folding>
+            <element signature="e#5570#5599#0" expanded="true" />
+            <element signature="e#6102#6128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/payeezyclient/EnvCat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/firstdata/firstapi/client/FirstAPIClientV2Helper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.36">
-          <caret line="1277" column="48" selection-start-line="1277" selection-start-column="48" selection-end-line="1277" selection-end-column="48" />
+        <state vertical-scroll-proportion="-15.84">
+          <caret line="1575" column="53" selection-start-line="1575" selection-start-column="53" selection-end-line="1575" selection-end-column="53" />
           <folding>
             <element signature="e#60213#60233#0" expanded="true" />
             <element signature="e#62615#62635#0" expanded="true" />
@@ -2024,11 +2014,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/payeezyclient/RequestTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5511222">
-          <caret line="6594" column="38" selection-start-line="6594" selection-start-column="38" selection-end-line="6594" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.67830426">
+          <caret line="7300" column="8" selection-start-line="7300" selection-start-column="8" selection-end-line="7300" selection-end-column="8" />
           <folding>
-            <element signature="e#436655#436877#0" expanded="true" />
-            <element signature="e#436876#436877#0" expanded="true" />
+            <element signature="e#442949#443171#0" expanded="true" />
+            <element signature="e#443170#443171#0" expanded="true" />
           </folding>
         </state>
       </provider>

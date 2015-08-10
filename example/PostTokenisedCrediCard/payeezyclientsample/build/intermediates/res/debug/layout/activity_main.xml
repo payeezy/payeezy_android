@@ -130,7 +130,7 @@
                             android:layout_column="1"
                             android:layout_row="1"
                             />
-                  <!--         <Button
+                         <Button
                            android:id="@+id/btn_getAuthVoidtoken"
                            android:layout_width="130dp"
                            android:layout_height="50dp"
@@ -141,7 +141,7 @@
                            android:layout_row="2"
                            />
 
-                       <Button
+                  <!--       <Button
                            android:id="@+id/btn_getPurchaseRefundtoken"
                            android:layout_width="130dp"
                            android:layout_height="50dp"
