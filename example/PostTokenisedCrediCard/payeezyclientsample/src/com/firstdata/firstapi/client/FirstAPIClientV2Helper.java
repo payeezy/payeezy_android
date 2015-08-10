@@ -34,6 +34,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.util.Assert;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -63,7 +64,7 @@ public class FirstAPIClientV2Helper {
     private String trToken;
     private String merchantid ;
     private String urltoken;
-    
+
 
 	@SuppressWarnings({ "rawtypes", "deprecation" })
 	public FirstAPIClientV2Helper()
@@ -469,6 +470,7 @@ public class FirstAPIClientV2Helper {
 			if(dataVals[0].contains("transaction_id"))
 			{
 				String transactionId = dataVals[1];
+
 				response.setTransactionId(transactionId);
 			}
 			if(dataVals[0].contains("transaction_tag"))
@@ -503,6 +505,8 @@ public class FirstAPIClientV2Helper {
 			}
 
 		}
+		System.out.println("transaction id after authorize="+TransactionResponse.getTransactionId());
+		System.out.println("transaction tag after authorize="+TransactionResponse.getTransactionTag());
 		return response;
 
     	/*System.out.println("response message="+responseMessage);
@@ -1548,22 +1552,39 @@ public class FirstAPIClientV2Helper {
     
    }
    public TransactionResponse doSecondaryTransactionObject(TransactionRequest trans) throws Exception {
-        Assert.notNull(trans.getTransactionTag(),"Transaction Tag is not present");
-        Assert.notNull(trans.getId(), "Id is not present");
-        Assert.notNull(trans.getTransactionType(), "Transaction type is not present");
-        String url=this.url+"/transactions/{id}";
+     //   Assert.notNull(trans.getTransactionTag(),"Transaction Tag is not present");
+	   Assert.notNull(TransactionResponse.getTransactionTag(), "Transaction Tag is not present");
+        Assert.notNull(TransactionResponse.getTransactionId(), "Id is not present");
+     //   Assert.notNull(trans.getType(), "Transaction type is not present");
+	   Assert.notNull(TransactionResponse.getToken().getTokenData().getType(), "Transaction type is not present");
+	   System.out.println("url capture=" + url);
+     //   String url=this.url+"/transactions/{id}";
+	   String url="https://api-cert.payeezy.com/v1"+"/transactions/{id}";
+	   //https://api-cert.payeezy.com/v1/transactions
+	   System.out.println("url capture="+url);
         trans.setTransactionType(trans.getTransactionType().toLowerCase());
         String payload=getJSONObject(trans);
+	   System.out.println("secondary trans capture transaction id="+ TransactionResponse.getTransactionId());
 	   System.out.println("secondary trans capture token="+TransactionResponse.getToken().getTokenData().getValue());
 	   System.out.println("payload for capture="+payload);
+
         HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
         //ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class,trans.getId());
-        ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class, trans.getId());
+
+		   ResponseEntity<Object> response = restTemplate.exchange(url, HttpMethod.POST, request, Object.class, TransactionResponse.getTransactionId());
+
 //           return doTransaction(trans,credentials);
-        
-        Object o2 = response.getBody();
-        TransactionResponse resp = GetTokenTransactionResponse(o2.toString());
-        return resp;
+
+		   Object o2 = response.getBody();
+		   TransactionResponse resp = GetTransactionResponse(o2.toString());
+		   System.out.println("response msg capture=" + o2.toString());
+		   return resp;
+
+
+
+
+
+
         //return (TransactionResponse)response.getBody();
 //           return null;
     }

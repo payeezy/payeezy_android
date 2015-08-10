@@ -1,7 +1,9 @@
 package com.example.payeezyclient;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
@@ -423,6 +425,43 @@ public class RequestTask extends AsyncTask<String, String, String>{
         	Toast.makeText( context, result + ":" + messages[i], Toast.LENGTH_SHORT).show();
         	//Toast.makeText( context, result + ":" + statusString, Toast.LENGTH_SHORT).show();
         }
+		// 1. Instantiate an AlertDialog.Builder with its constructor
+	//	AlertDialog.Builder builder = new AlertDialog.Builder(context);
+	//	AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+	/*	builder.setMessage(messages[1])
+				.setTitle("Transaction Results")
+				.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+				}).create().show();*/
+
+// 2. Chain together various setter methods to set the dialog characteristics
+	//	builder.setMessage(result)
+	//			.setTitle("Transaction Results");
+
+
+// Add the buttons
+	//	builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	//		public void onClick(DialogInterface dialog, int id) {
+				// User clicked OK button
+	//			dialog.cancel();
+
+//			}
+//		});
+//		builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//			public void onClick(DialogInterface dialog, int id) {
+				// User cancelled the dialog
+//				dialog.cancel();
+
+//			}
+//		});
+
+// 3. Get the AlertDialog from create()
+	//	AlertDialog dialog = builder.create();
+//		builder.create().show();
+		//builder.show();
+	//	dialog.cancel();
     }
     
     
@@ -6550,7 +6589,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			trans.setReferenceNo("abc1412096293369");
 			trans.setTransactionType("authorize");
 			trans.setPaymentMethod("token");
-			trans.setAmount("0");
+			trans.setAmount("1");
 			trans.setCurrency("USD");
 
 			Token token = new Token();
@@ -6902,13 +6941,13 @@ System.out.println("token value in purchase=" + TransactionResponse.getToken().g
 			cardtypeSecondary = CardType.CARD_VISA;
 			FirstAPIClientV2Helper clientHelper = new FirstAPIClientV2Helper();
 
-			//Generate Token
-			clientHelper.setAppId(TransactionDataProvider.appIdInt);
-			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdInt);
-			clientHelper.setToken(TransactionDataProvider.tokenInt);
-			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
-			clientHelper.setUrl(TransactionDataProvider.urlInt);
 
+			//Generate Token
+			clientHelper.setAppId(TransactionDataProvider.appIdCert);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
+			clientHelper.setToken(TransactionDataProvider.tokenCert);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlCert);
 			//generate
 			//generate
 			category = TransactionCategory.CATEGORY_GENERATETOKEN;
@@ -7018,16 +7057,18 @@ System.out.println("token value in purchase=" + TransactionResponse.getToken().g
 			category = TransactionCategory.CATEGORY_FDTOKEN;
 		//	trans = getPrimaryTransactionForTransType();
 
-			trans.setTransactionTag("349990997");
+			//trans.setTransactionTag("349990997");
 			//trans.setTransactionId("07698G");
-			trans.setId("07698G");
+			//trans.setId("07698G");
 
 			trans.setReferenceNo("abc1412096293369");
-			trans.setTransactionTag("1871007");
+		//	trans.setTransactionTag("1871007");
 			trans.setTransactionType(TransactionType.CAPTURE.name()) ;
 			trans.setPaymentMethod("token");
 			trans.setAmount("1");
+	//		trans.setAmount(trans.getAmount());
 			trans.setCurrency("USD");
+	//		trans.setCurrency(trans.getCurrency());
 			//statusString = "1";
 			//TransactionResponse.getToken().getTokenData().
 				//	TransactionResponse.setTransactionTag(responseToken2.getTransactionTag());
@@ -7036,6 +7077,8 @@ System.out.println("token value in purchase=" + TransactionResponse.getToken().g
 
 
 			//statusString = "2";
+			System.out.println("Transaction id from capture="+TransactionResponse.getTransactionId());
+			System.out.println("Transaction id from capture="+TransactionResponse.getTransactionTag());
 			trans.setTransactionId(TransactionResponse.getTransactionId());
 			trans.setTransactionTag(TransactionResponse.getTransactionTag());
 			//statusString = "3";
@@ -7067,8 +7110,8 @@ System.out.println("token value in purchase=" + TransactionResponse.getToken().g
 
 			trans.setAuth(null);
 			trans.setTa_token(null);
-			trans.setType(null);
-
+			//trans.setType(null);
+System.out.println("before calling capture");
 			//statusString = "calling capture";
 			TransactionResponse responseObject4 = clientHelper.captureTransactionToken(trans);
 			//statusString = "called capture";
