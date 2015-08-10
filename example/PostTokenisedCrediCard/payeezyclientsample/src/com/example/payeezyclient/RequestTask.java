@@ -168,6 +168,15 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			CallVoidVisaGetGetToken();
 			return "getauthcapturetoken";
 		}
+//Added for GETpurchaserefundtoken aug 6th
+		if(uri[0].toLowerCase().equalsIgnoreCase("getpurchaserefundtoken"))
+		{
+			//CallGenerateTokenVisaGetTokenGet();
+			//CallGETGetTokenTransactionsVisa();
+			CallPurchaseVisaGetGetToken();
+			CallRefundVisaGetGetToken();
+			return "getpurchaserefundtoken";
+		}
 
     	if(uri[0].toLowerCase().equalsIgnoreCase("gettokenmc"))
     	{
@@ -7308,6 +7317,122 @@ System.out.println("before calling capture");
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
 			//statusString = statusString + "Exception :"+ e.getMessage() + splitter;
 		}
+	}
+	private void CallRefundVisaGetGetToken()
+	{
+		try
+		{
+			cardtypeSecondary = CardType.CARD_MASTERCARD;
+			FirstAPIClientV2Helper clientHelper = new FirstAPIClientV2Helper();
+			////String appId = "y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a";
+			////String secureId = "86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f786fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7";
+			////String token = "fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6";
+			////String url = "https://api-cert.payeezy.com/v1";
+
+			clientHelper.setAppId(TransactionDataProvider.appIdCert);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
+			clientHelper.setToken(TransactionDataProvider.tokenCert);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlCert);
+
+
+
+			/*TransactionRequest transReq = getPrimaryTransactionForSecondaryModified();
+			TransactionResponse responseObject1 = clientHelper.purchaseTransaction(transReq);
+			String resString = ((UserTransactionResponse)responseObject1).getResponseString();
+			int startIndex = resString.indexOf("transaction_tag");
+			startIndex = resString.indexOf("=", startIndex+1);
+			int endIndex = resString.indexOf(",", startIndex);
+			String transaction_tid = resString.substring(startIndex, endIndex);
+			transaction_tid = transaction_tid.replace(" ", "");
+			transaction_tid = transaction_tid.replace(":", "");
+			transaction_tid = transaction_tid.replace("=", "");
+
+			startIndex = resString.indexOf("transaction_id");
+			startIndex = resString.indexOf("=", startIndex+1);
+			endIndex = resString.indexOf(",", startIndex);
+			String transaction_id = resString.substring(startIndex, endIndex);
+			transaction_id = transaction_id.replace(" ", "");
+			transaction_id = transaction_id.replace(":", "");
+			transaction_id = transaction_id.replace("=", "");
+*/
+
+			//Trying
+			//refund
+
+			category = TransactionCategory.CATEGORY_FDTOKEN;
+			//TransactionRequest trans = getSecondaryTransactionForTransType();
+			TransactionRequest trans = getPrimaryTransactionForTransType();
+
+			trans.setTransactionTag(TransactionResponse.getTransactionTag());
+	        //trans.setTransactionId("07698G");
+	        trans.setTransactionId(TransactionResponse.getTransactionId());
+
+			trans.setReferenceNo("Astonishing-Sale");
+	        trans.setTransactionType(TransactionType.REFUND.name()) ;
+	        trans.setPaymentMethod("token");
+	        trans.setAmount("1");
+	        trans.setCurrency("USD");
+
+	        //if(responseToken2 != null)
+	        //{
+		        //trans.setTransactionTag(responseToken2.getTransactionTag());
+		        //trans.setId(responseToken2.getTransactionId());
+	        //}
+	        Token token = new Token();
+	        Transarmor ta = new Transarmor();
+
+	        ta.setValue(TransactionResponse.getToken().getTokenData().getValue());
+
+	        ta.setName(TransactionResponse.getToken().getTokenData().getName());
+	        ta.setExpiryDt(TransactionResponse.getToken().getTokenData().getExpiryDt());
+	        ta.setType(TransactionResponse.getToken().getTokenData().getType());
+
+			//ta.setName("John Smith");
+			//ta.setExpiryDt("0416");
+			//ta.setType("mastercard");
+
+			token.setTokenData(ta);
+			token.setToken_type("FDToken");
+			trans.setToken(token);
+
+			trans.setCard(null);
+			trans.setBilling(null);
+			trans.setAuth(null);
+			trans.setTa_token(null);
+			trans.setType(null);
+
+			//SoftDescriptor sd = new SoftDescriptor();
+			//sd.setRegion("region");
+			//trans.setDescriptor(sd);
+
+			//statusString = "calling refund";
+			TransactionResponse responseObject5 = clientHelper.refundTransactionToken(trans);
+			//statusString = "called refund";
+			statusString = statusString + ((UserTransactionResponse)responseObject5).getResponseString() + splitter;
+			//Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
+			//System.out.println("Response : " + responseObject5.toString());
+			//String responseString = responseObject.toString();
+			//UserTransactionResponse uresp5 = (UserTransactionResponse)(responseObject5);
+			TransactionResponse resp5 = (TransactionResponse)(responseObject5); //uresp5; //uresp.getBody();
+			//System.out.println(uresp5.getResponseMessage() );
+			//System.out.println(resp5.getStatus() );
+			//statusString = uresp.getResponseString();
+			//statusString = statusString + uresp5.getResponseString() + splitter;
+			//statusString = statusString + resp5.getStatus() + splitter;
+			//if(resp5.getTransactionStatus() == "approved")
+			//{
+			//System.out.println(resp.getStatus() );
+			//}
+
+		}catch(Exception e)
+		{
+			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+			//System.out.println(e.getMessage());
+			statusString = statusString + " Exception :"+ e.getMessage() ;//+ splitter;
+		}
+
+
 	}
 
 	/* JSON pay load for transarmor capture

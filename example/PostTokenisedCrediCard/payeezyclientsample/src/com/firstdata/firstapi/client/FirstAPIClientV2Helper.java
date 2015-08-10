@@ -1068,8 +1068,8 @@ public class FirstAPIClientV2Helper {
     
     private TransactionResponse doSecondaryTransaction(TransactionRequest trans) throws Exception 
     {
-        Assert.notNull(trans.getTransactionTag(),"Transaction Tag is not present");
-        Assert.notNull(trans.getId(),"Id is not present"); 
+        Assert.notNull(TransactionResponse.getTransactionTag(),"Transaction Tag is not present");
+        Assert.notNull(TransactionResponse.getTransactionId(),"Id is not present");
         Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
         String url=this.url+"/transactions/{id}";
         String payload=getJSONObject(trans);
@@ -1078,7 +1078,7 @@ public class FirstAPIClientV2Helper {
         //ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class,trans.getTransactionId());
         //ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,trans.getTransactionId());
         //request.getHeaders().setUserAgent(System.getProperty("http.agent"));
-        ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,trans.getId());
+        ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,TransactionResponse.getTransactionId());
         System.out.println(response.toString());
         String resString = response.toString();
         UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
