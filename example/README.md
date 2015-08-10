@@ -25,9 +25,9 @@ Sample - lib dependencies:
 Sample properties:
 <div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezy_android_sample_properties.png" alt="sample app"/></div>
 
-<div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezy_android_sample_full_scrn.png" alt="sample app"/></div>
+<div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezyandroidUIScreen" alt="sample app"/></div>
 
-<div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezy_android_sample_login_btn_response.png" alt="sample app"/></div>
+<div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/PayeezyAndroidAuthorise" alt="sample app"/></div>
 
 ## Contributing
 
