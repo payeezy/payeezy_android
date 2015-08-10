@@ -16,9 +16,6 @@ Refer guide for more information
 Project dir structure:
 <div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezy_android_sample_dir_structure.png" alt="sample app"/></div>
 
-Payeezy Android configrations :
-<div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/android%20studio%20with%20payeezy%20config.png" alt="sample app"/></div>
-
 Sample - lib dependencies:
 <div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezy_android_sample_lib.png" alt="sample app"/></div>
 
