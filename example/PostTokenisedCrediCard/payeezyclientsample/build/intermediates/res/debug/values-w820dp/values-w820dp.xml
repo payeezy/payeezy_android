@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/payeezyandroid/payeezy_android-master/example/sampleapp6/payeezyclientsample/res/values-w820dp/dimens.xml -->
+    <!-- From: file:/E:/clonedpayeezyandroid/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/values-w820dp/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">64dp</dimen>
 </resources>

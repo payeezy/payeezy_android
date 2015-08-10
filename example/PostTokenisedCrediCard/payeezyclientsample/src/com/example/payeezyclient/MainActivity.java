@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
 /*	public void Initialize()
 	{
 		try*/
-	public void onGetToken(View view)
+	/*public void onGetToken(View view)
 		{
 			RequestTask rTask5 = new RequestTask(getApplicationContext());
 			rTask5.execute("gettokenvisa");
@@ -73,8 +73,67 @@ public class MainActivity extends Activity {
 			System.out.println("Exception GetToken :" + e.getMessage());
 		}
 	}*/
-	
-	
+//Added for GET token
+	public void onGetGetToken(View view)
+	{
+		RequestTask rTask5 = new RequestTask(getApplicationContext());
+		rTask5.execute("getgettokenvisa");
+		//rTask5.get();
+		//rTask5.wait();
+		System.out.println("gettoken call end");
+	}
+
+	//Added for GET-Authorise Selection
+	public void onGetAuthoriseToken(View view)
+	{
+		RequestTask rTask5 = new RequestTask(getApplicationContext());
+		rTask5.execute("getauthorisetoken");
+		//rTask5.get();
+		//rTask5.wait();
+		System.out.println("getauthorisetoken call end");
+	}
+
+	//Added for GET-Purchase Selection
+	public void onGetPurchaseToken(View view)
+	{
+		RequestTask rTask5 = new RequestTask(getApplicationContext());
+		rTask5.execute("getpurchasetoken");
+		//rTask5.get();
+		//rTask5.wait();
+		System.out.println("getpurchasetoken call end");
+	}
+
+	//Added for Authorise-Capture Selection
+	public void onGetAuthCaptureToken(View view)
+	{
+		RequestTask rTask5 = new RequestTask(getApplicationContext());
+		rTask5.execute("getauthcapturetoken");
+		//rTask5.get();
+		//rTask5.wait();
+		System.out.println("getauthcapturetoken call end");
+	}
+
+	//Added for Authorise-Void Selection
+	public void onGetAuthVoidToken(View view)
+	{
+		RequestTask rTask5 = new RequestTask(getApplicationContext());
+		rTask5.execute("getauthvoidtoken");
+		//rTask5.get();
+		//rTask5.wait();
+		System.out.println("getauthvoidtoken call end");
+	}
+
+	//Added for Purchase-Refund Selection
+	public void onGetPurchaseRefundToken(View view)
+	{
+		RequestTask rTask5 = new RequestTask(getApplicationContext());
+		rTask5.execute("getpurchaserefundtoken");
+		//rTask5.get();
+		//rTask5.wait();
+		System.out.println("getpurchaserefundtoken call end");
+	}
+
+
 /*commented july 31st
 	public void onLogin(View view)
 	 */

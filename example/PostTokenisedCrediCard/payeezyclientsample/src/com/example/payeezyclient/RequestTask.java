@@ -27,6 +27,8 @@ import com.firstdata.firstapi.client.domain.v2.Transarmor;
 import com.firstdata.firstapi.client.domain.v2.UserTransactionResponse;
 import com.firstdata.firstapi.client.domain.v2.ValueLinkCard;
 
+
+
 enum CardType {
 	CARD_VISA ,
 	CARD_MASTERCARD ,
@@ -56,7 +58,9 @@ enum TransactionCategory
 	CATEGORY_VALUELINK,
 	CATEGORY_GENERATETOKEN,
 	CATEGORY_FDTOKEN
-}
+};
+
+
 
 @SuppressLint("DefaultLocale")
 public class RequestTask extends AsyncTask<String, String, String>{
@@ -93,10 +97,11 @@ public class RequestTask extends AsyncTask<String, String, String>{
 	}
 	private String statusString = "";
 	private String splitter = "~~~~~~~~";
+
 	
     @Override
     protected String doInBackground(String... uri) {
-    	
+    	//new
     	if(uri[0].toLowerCase().equalsIgnoreCase("gettokenget"))
     	{
     		CallGenerateTokenVisaGetTokenGet();
@@ -114,6 +119,45 @@ public class RequestTask extends AsyncTask<String, String, String>{
     		CallGetTokenTransactionsVisa();
     		return "gettokenvisa";
     	}
+
+		//Added for GETgettoken aug 3rd
+		if(uri[0].toLowerCase().equalsIgnoreCase("getgettokenvisa"))
+		{
+			//CallGenerateTokenVisaGetTokenGet();
+			CallGETGetTokenTransactionsVisa();
+			return "getgettokenvisa";
+		}
+		//Added for GETauthorisetoken aug 6th
+		if(uri[0].toLowerCase().equalsIgnoreCase("getauthorisetoken"))
+		{
+			//CallGenerateTokenVisaGetTokenGet();
+			//CallGETGetTokenTransactionsVisa();
+			CallAuthorizeVisaGetGetToken();
+
+
+			return "getauthorisetoken";
+		}
+
+		//Added for GETpurchasetoken aug 6th
+		if(uri[0].toLowerCase().equalsIgnoreCase("getpurchasetoken"))
+		{
+			//CallGenerateTokenVisaGetTokenGet();
+			//CallGETGetTokenTransactionsVisa();
+			CallPurchaseVisaGetGetToken();
+			return "getpurchasetoken";
+		}
+
+		//Added for GETauthcapturetoken aug 6th
+		if(uri[0].toLowerCase().equalsIgnoreCase("getauthcapturetoken"))
+		{
+			//CallGenerateTokenVisaGetTokenGet();
+			//CallGETGetTokenTransactionsVisa();
+			CallAuthorizeVisaGetGetToken();
+			CallCaptureVisaGetGetToken();
+			return "getauthcapturetoken";
+		}
+
+
     	if(uri[0].toLowerCase().equalsIgnoreCase("gettokenmc"))
     	{
     		CallGetTokenTransactionsMC();
@@ -587,14 +631,23 @@ public class RequestTask extends AsyncTask<String, String, String>{
     private void CallGetTokenTransactionsVisa()
     {
     	CallGenerateTokenVisaGetToken();
-    	CallAuthorizeVisaGetToken();
-    	CallPurchaseVisaGetToken();
+    	//CallAuthorizeVisaGetToken();
+    //	CallPurchaseVisaGetToken();
+
+
     //	CallCaptureVisaGetToken();
     //	CallRefundVisaGetToken();
     //	CallVoidVisaGetToken();
     	
     }
-    
+
+	//Added for GETToken 3rd August-new
+	private void CallGETGetTokenTransactionsVisa()
+	{
+		CallGenerateGETTokenVisaGetToken();
+	//	CallAuthorizeVisaGetGetToken();
+	//	CallPurchaseVisaGetGetToken();
+	}
     private void CallGetTokenTransactionsMC()
     {
     	CallGenerateTokenMCGetToken();
@@ -6222,9 +6275,88 @@ public class RequestTask extends AsyncTask<String, String, String>{
 		}
 	}
 
+	//Method added for GET token August 3rd
+	private void CallGenerateGETTokenVisaGetToken()
+	{
+		try
+		{
+			FirstAPIClientV2Helper clientHelper = new FirstAPIClientV2Helper();
+			cardtype = CardType.CARD_VISA;
+
+			/*clientHelper.setAppId(TransactionDataProvider.appIdInt);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdInt);
+			clientHelper.setToken(TransactionDataProvider.tokenInt);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlInt);*/
+
+			clientHelper.setAppId(TransactionDataProvider.appIdCert);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
+			clientHelper.setToken(TransactionDataProvider.tokenCert);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlCert);
+
+			category = TransactionCategory.CATEGORY_GENERATETOKEN;
+			TransactionRequest trans = getPrimaryTransactionForTransType();
+
+			trans.setType("FDToken");
+
+			trans.getCard().setNumber("4012000033330026");
+			trans.getCard().setName("John Smith");
+			trans.getCard().setExpiryDt("0416");
+			trans.getCard().setCvv("123");
+			trans.getCard().setType("visa");
+
+			trans.setAuth("false");
+			trans.setTa_token("NOIW");
+
+			trans.setToken(null);
+			trans.setBilling(null);
+			trans.setTransactionType(null);
+			trans.setPaymentMethod(null);
+			trans.setAmount(null);
+			trans.setCurrency(null);
+
+			//statusString = "received transaction";
+			//Object responseObject = clientHelper.GETgetTokenTransaction(trans);
+			TransactionResponse response = clientHelper.GETgetTokenTransaction(trans);
+
+			System.out.println("Token gen="+TransactionResponse.getToken().getTokenData().getValue());
+			//statusString = "called transaction";
+			//statusString = responseObject.toString();
+		/*	TransactionResponse tr1 = (TransactionResponse)responseObject;
+			//statusString = tr1.getStatus();
+			//statusString = tr1.getToken().getTokenData().getValue();
+
+
+		//***********************************/
+			statusString = "gettoken called    token generated ==";
+			statusString = statusString  +TransactionResponse.getToken().getTokenData().getValue();
+			statusString = statusString  + ((UserTransactionResponse)response).getResponseString() + splitter;
+		//	statusString = statusString  + ((UserTransactionResponse)tr1).getResponseString() + splitter;*/
+
+			System.out.println("Response : " + response.toString());
+/*
+			statusString = responseObject.toString();
+
+			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+			TransactionResponse resp = uresp; //uresp.getBody();
+			System.out.println(uresp.getResponseMessage() );
+			statusString = statusString + uresp.getResponseString() + splitter;
+			if(resp.getTransactionStatus() == "approved")
+			{
+				System.out.println(uresp.getTransactionStatus() );
+			}
+			*/
+		}catch ( Exception e)
+		{
+			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+			System.out.println(e.getMessage());
+			statusString = statusString + "Exception :"+ e.getMessage() + splitter;
+		}
+	}
 	//
 	//changes made july 28th5-15pm for cert settings
-	private void CallAuthorizeVisaGetToken()
+/*private void CallAuthorizeVisaGetToken()
 	{
 		try
 		{
@@ -6238,15 +6370,15 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
 			clientHelper.setUrl(TransactionDataProvider.urlInt);*/
 
-			clientHelper.setAppId(TransactionDataProvider.appIdCert);
-			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
+//			clientHelper.setAppId(TransactionDataProvider.appIdCert);
+/*			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
 			clientHelper.setToken(TransactionDataProvider.tokenCert);
 			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
 			clientHelper.setUrl(TransactionDataProvider.urlCert);
-		
+*/
 			
 			//generate
-			category = TransactionCategory.CATEGORY_GENERATETOKEN;
+/*			category = TransactionCategory.CATEGORY_GENERATETOKEN;
 			TransactionRequest trans = getPrimaryTransactionForTransType();
 			
 			trans.setType("FDToken");
@@ -6277,7 +6409,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			//TransactionResponse resp = uresp; //uresp.getBody();
 			TransactionResponse resp = (TransactionResponse)responseObject; //uresp.getBody();
 			//System.out.println(uresp.getResponseMessage() );
-			statusString = statusString  + ((UserTransactionResponse)resp).getResponseString() + splitter;
+//			statusString = statusString  + ((UserTransactionResponse)resp).getResponseString() + splitter;
 			System.out.println(resp.getStatus());
 			
 			TransactionResponse responseToken = resp;
@@ -6336,6 +6468,182 @@ public class RequestTask extends AsyncTask<String, String, String>{
 				System.out.println(uresp2.getTransactionStatus() );
 			}
 			*/
+/*		}catch(Exception e)
+		{
+			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+			//System.out.println(e.getMessage());
+			statusString = statusString + "Exception :"+ e.getMessage() + splitter;
+		}
+	}*/
+
+//for GET method
+	private void CallAuthorizeVisaGetGetToken()
+	{
+		try
+		{
+			FirstAPIClientV2Helper clientHelper = new FirstAPIClientV2Helper();
+			cardtype = CardType.CARD_VISA;
+
+			//Generate token
+			/*clientHelper.setAppId(TransactionDataProvider.appIdInt);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdInt);
+			clientHelper.setToken(TransactionDataProvider.tokenInt);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlInt);*/
+
+			clientHelper.setAppId(TransactionDataProvider.appIdCert);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
+			clientHelper.setToken(TransactionDataProvider.tokenCert);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlCert);
+
+
+			//generate
+			category = TransactionCategory.CATEGORY_GENERATETOKEN;
+			//Start comment for tokened authorise
+			// TransactionRequest trans = getPrimaryTransactionForTransType();
+
+			/*trans.setType("FDToken");
+
+			//trans.getCard().setNumber("4012000033330026");
+			trans.getCard().setName("John Smith");
+			trans.getCard().setExpiryDt("0416");
+			trans.getCard().setCvv("123");
+			trans.getCard().setType("visa");
+
+			trans.setAuth("false");
+			trans.setTa_token("NOIW");
+
+			trans.setToken(null);
+			trans.setBilling(null);
+			trans.setTransactionType(null);
+			trans.setPaymentMethod(null);
+			trans.setAmount(null);
+			trans.setCurrency(null);
+
+			//statusString = "received generate transaction";
+			Object responseObject = clientHelper.getTokenTransaction(trans);
+			//statusString = "called generate transaction";
+
+			System.out.println("Response : " + responseObject.toString());
+
+			//UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+			//TransactionResponse resp = uresp; //uresp.getBody();
+			TransactionResponse resp = (TransactionResponse)responseObject; //uresp.getBody();
+			//System.out.println(uresp.getResponseMessage() );
+			statusString = statusString  + ((UserTransactionResponse)resp).getResponseString() + splitter;
+			System.out.println(resp.getStatus());
+
+			TransactionResponse responseToken = resp;
+			//end commenting for tokened authorize
+*/
+			//Authorize
+			category = TransactionCategory.CATEGORY_FDTOKEN;
+			//TransactionRequest transGen = getPrimaryTransactionForTransType();
+
+			//category = TransactionCategory.CATEGORY_FDTOKEN;
+
+			//TransactionRequest trans = getPrimaryTransactionForTransType();
+			//trans = getPrimaryTransactionForTransType();
+			//trans.getToken().getTokenData().setValue(responseToken.getToken().getTokenData().getValue());
+			TransactionRequest trans = getPrimaryTransactionForTransType();
+			trans.setReferenceNo("abc1412096293369");
+			trans.setTransactionType("authorize");
+			trans.setPaymentMethod("token");
+			trans.setAmount("0");
+			trans.setCurrency("USD");
+
+			Token token = new Token();
+			Transarmor ta = new Transarmor();
+//TransactionResponse responseToken=new TransactionResponse();
+			ta.setValue("2833693264441732");
+			//String s = responseToken.getToken().getTokenData().getValue();
+			ta.setValue(TransactionResponse.getToken().getTokenData().getValue());
+			System.out.println("tokenvalue from authorise"+TransactionResponse.getToken().getTokenData().getValue());
+			ta.setName(TransactionResponse.getToken().getTokenData().getName());
+			ta.setExpiryDt(TransactionResponse.getToken().getTokenData().getExpiryDt());
+			ta.setType(TransactionResponse.getToken().getTokenData().getType());
+			//ta.setName("John Smith");
+			//ta.setExpiryDt("0416");
+			//ta.setType("mastercard");
+			token.setTokenData(ta);
+			//token.setTokenType("FDToken");
+			token.setToken_type("FDToken");
+			trans.setToken(token);
+System.out.println("Token data in authorise"+TransactionResponse.getToken().getTokenData().getValue());
+			trans.setCard(null);
+			trans.setBilling(null);
+			trans.setAuth(null);
+			trans.setTa_token(null);
+			trans.setType(null);
+
+			//statusString = "calling transaction";
+
+			Object responseObject2 = clientHelper.authorizeTransactionToken(trans);
+			//TransactionResponse response  = clientHelper.authorizeTransactionToken(trans);
+			//statusString = statusString  +TransactionResponse.getToken().getTokenData().getValue();
+
+			statusString = "authorise called   Transaction approved";
+			statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+
+
+			//statusString = statusString  + ((UserTransactionResponse)response).getResponseString() + splitter;
+		//	statusString = statusString  +TransactionResponse.getTransactionId() + splitter;
+			//statusString = statusString  +TransactionResponse.getToken().getTokenData().getValue();
+			//statusString = statusString  +TransactionResponse.getTransactionId()+ splitter;
+			//statusString = statusString  + (response).getBankMessage() + splitter;
+
+		//	System.out.println("Response : " + response.toString());
+
+
+			//	statusString = "authorise called   ";
+			//statusString = statusString  +TransactionResponse.getToken().getTokenData().getValue();
+		//	statusString = statusString  + ((UserTransactionResponse)response).getResponseString() + splitter;
+		//	statusString = "authorize called";
+		//	statusString = statusString  + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+			/*
+
+
+			UserTransactionResponse uresp2 = (UserTransactionResponse)(responseObject2);
+			TransactionResponse resp2 = uresp2; //uresp.getBody();
+			System.out.println(uresp2.getResponseMessage() );
+			statusString = statusString + uresp2.getResponseString() + splitter;
+			if(resp2.getTransactionStatus() == "approved")
+			{
+				System.out.println(uresp2.getTransactionStatus() );
+			}
+			*/
+
+
+	/*		System.out.println(responseObject2.toString());
+			String resString = responseObject2.toString();
+
+
+			//System.out.println("Response : " + responseObject2.toString());
+			//statusString = "authorize called";
+			statusString = statusString  + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+
+			UserTransactionResponse uresp2 = (UserTransactionResponse)(responseObject2);
+			TransactionResponse resp2 = uresp2; //uresp.getBody();
+			System.out.println(uresp2.getResponseMessage() );
+			statusString = statusString + uresp2.getResponseString() + splitter;
+			if(resp2.getTransactionStatus() == "approved")
+			{
+				System.out.println(uresp2.getTransactionStatus() );
+			}*/
+			/*UserTransactionResponse uresponseStr =  new UserTransactionResponse();
+			if(resString.contains("FDToken"))
+			{
+				uresponseStr.setResponseString(resString);
+				UserTransactionResponse tres = GetTokenTransactionResponse(resString);
+				uresponseStr = tres;
+			}
+*/
+
+
+			//}
+
+
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -6346,9 +6654,9 @@ public class RequestTask extends AsyncTask<String, String, String>{
 
 	/* JSON pay load for transarmor purchase
 	 * 
-	 */
+	 *
 	
-	private void CallPurchaseVisaGetToken()
+	*private void CallPurchaseVisaGetToken()
 	{
 		try
 		{
@@ -6363,17 +6671,19 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
 			clientHelper.setUrl(TransactionDataProvider.urlInt);*/
 
-			clientHelper.setAppId(TransactionDataProvider.appIdCert);
+			/*clientHelper.setAppId(TransactionDataProvider.appIdCert);
 			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
 			clientHelper.setToken(TransactionDataProvider.tokenCert);
 			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
-			clientHelper.setUrl(TransactionDataProvider.urlCert);
+			clientHelper.setUrl(TransactionDataProvider.urlCert);*/
 			
 			//generate
-			category = TransactionCategory.CATEGORY_GENERATETOKEN;
-			TransactionRequest trans = getPrimaryTransactionForTransType();
-			
-			trans.setType("FDToken");
+			//Commented because it has to get the tokenresponse for authorize
+			//category = TransactionCategory.CATEGORY_GENERATETOKEN;
+
+			//TransactionRequest trans = getPrimaryTransactionForTransType();
+			//Commented because it has to get the tokenresponse for authorize
+			/*trans.setType("FDToken");
 			
 	        trans.getCard().setNumber("4012000033330026");
 	        trans.getCard().setName("John Smith");
@@ -6403,14 +6713,15 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			System.out.println(resp.getStatus() );
 			statusString = statusString  + ((UserTransactionResponse)resp).getResponseString() + splitter;
 			
-			TransactionResponse responseToken = resp;
-			
+			TransactionResponse responseToken = resp;*/
+			//end Commented because it has to get the saved tokenresponse for authorize
 			// purchase
-			
+			//get the transactionresponse saved from get token
+		/*	TransactionResponse responseToken=new TransactionResponse();
 			category = TransactionCategory.CATEGORY_FDTOKEN;
 			//TransactionRequest transGen = getPrimaryTransactionForTransType();
-			trans = getPrimaryTransactionForTransType();
-			
+			TransactionRequest trans = getPrimaryTransactionForTransType();
+
 			trans.setReferenceNo("Astonishing-Sale");
 	        trans.setTransactionType("purchase");
 	        trans.setPaymentMethod("token");
@@ -6419,32 +6730,152 @@ public class RequestTask extends AsyncTask<String, String, String>{
 	        
 	        Token token = new Token();
 	        Transarmor ta = new Transarmor();
-
-	        ta.setValue(responseToken.getToken().getTokenData().getValue());
-	        ta.setName(responseToken.getToken().getTokenData().getName());
-	        ta.setExpiryDt(responseToken.getToken().getTokenData().getExpiryDt());
-	        ta.setType(responseToken.getToken().getTokenData().getType());
+			ta.setValue(TransactionResponse.getToken().getTokenData().getValue());
+			System.out.println("tokenvalue from capture"+TransactionResponse.getToken().getTokenData().getValue());
+	        ta.setValue(TransactionResponse.getToken().getTokenData().getValue());
+			ta.setName(TransactionResponse.getToken().getTokenData().getName());
+			ta.setExpiryDt(TransactionResponse.getToken().getTokenData().getExpiryDt());
+			ta.setType(TransactionResponse.getToken().getTokenData().getType());
 	        
 	        token.setTokenData(ta);
+			System.out.println("tokendata="+ta.getValue());
 	        token.setToken_type("FDToken");
 	        trans.setToken(token);
 	        
-	        trans.setCard(null);
+	    /*    trans.setCard(null);
 	        trans.setBilling(null);
 	        trans.setAuth(null);
 	        trans.setTa_token(null);
-	        trans.setType(null);
+	        trans.setType(null);*/
 	        
 	        //statusString = "before purchase transaction";
 	        //statusString = trans.getToken().getToken_type().toUpperCase();
-			Object responseObject1 = clientHelper.purchaseTransactionToken(trans);
+			//Object responseObject1 = clientHelper.purchaseTransactionToken(trans);
 			//statusString = ((TransactionResponse) responseObject1).getValidationStatus();
 			//statusString = " called purchase transaction";
-			statusString = statusString  + ((UserTransactionResponse)responseObject1).getResponseString() + splitter;
+			//statusString = statusString  + ((UserTransactionResponse)responseObject1).getResponseString() + splitter;
 			
 			/*
 			System.out.println("Response : " + responseObject1.toString());
 			
+			//UserTransactionResponse uresp1 = (UserTransactionResponse)(responseObject1);
+			//TransactionResponse resp1 = uresp1; //uresp.getBody();
+			TransactionResponse resp1 = (TransactionResponse)(responseObject1);
+			System.out.println(resp1.getStatus() );
+			statusString = statusString + resp1.getStatus() + splitter;
+			if(resp1.getTransactionStatus() == "approved")
+			{
+				System.out.println(resp1.getTransactionStatus() );
+			}
+			*/
+	/*	}catch(Exception e)
+		{
+			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+			statusString = statusString + "Exception :"+ e.getMessage() + splitter;
+		}
+	}*/
+
+	//For GET method-Purchase
+	private void CallPurchaseVisaGetGetToken()
+	{
+		try
+		{
+			FirstAPIClientV2Helper clientHelper = new FirstAPIClientV2Helper();
+			cardtype = CardType.CARD_VISA;
+
+			//Generate token
+			//Changes made July 29th 11.28am for Cert settings
+			/*clientHelper.setAppId(TransactionDataProvider.appIdInt);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdInt);
+			clientHelper.setToken(TransactionDataProvider.tokenInt);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlInt);*/
+
+			clientHelper.setAppId(TransactionDataProvider.appIdCert);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdCert);
+			clientHelper.setToken(TransactionDataProvider.tokenCert);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlCert);
+
+			//generate
+			category = TransactionCategory.CATEGORY_GENERATETOKEN;
+			TransactionRequest trans = getPrimaryTransactionForTransType();
+//Start comment for tokened purchase
+			/*trans.setType("FDToken");
+
+			trans.getCard().setNumber("4012000033330026");
+			trans.getCard().setName("John Smith");
+			trans.getCard().setExpiryDt("0416");
+			trans.getCard().setCvv("123");
+			trans.getCard().setType("visa");
+
+			trans.setAuth("false");
+			trans.setTa_token("NOIW");
+
+			trans.setToken(null);
+			trans.setBilling(null);
+			trans.setTransactionType(null);
+			trans.setPaymentMethod(null);
+			trans.setAmount(null);
+			trans.setCurrency(null);
+
+			//statusString = "received transaction";
+			Object responseObject = clientHelper.getTokenTransaction(trans);
+			//statusString = "called transaction";
+
+			System.out.println("Response : " + responseObject.toString());
+
+			//UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+			//TransactionResponse resp = uresp; //uresp.getBody();
+			TransactionResponse resp = (TransactionResponse)(responseObject);; //uresp.getBody();
+			System.out.println(resp.getStatus() );
+			statusString = statusString  + ((UserTransactionResponse)resp).getResponseString() + splitter;
+
+			TransactionResponse responseToken = resp;
+			//End comment for tokened purchase
+*/
+			// purchase
+
+			category = TransactionCategory.CATEGORY_FDTOKEN;
+			//TransactionRequest transGen = getPrimaryTransactionForTransType();
+			trans = getPrimaryTransactionForTransType();
+
+			trans.setReferenceNo("Astonishing-Sale");
+			trans.setTransactionType("purchase");
+			trans.setPaymentMethod("token");
+			trans.setAmount("1");
+			trans.setCurrency("USD");
+
+			Token token = new Token();
+			Transarmor ta = new Transarmor();
+TransactionResponse responseToken=new TransactionResponse();
+			ta.setValue(TransactionResponse.getToken().getTokenData().getValue());
+			ta.setName(TransactionResponse.getToken().getTokenData().getName());
+			ta.setExpiryDt(TransactionResponse.getToken().getTokenData().getExpiryDt());
+			ta.setType(TransactionResponse.getToken().getTokenData().getType());
+System.out.println("token value in purchase=" + TransactionResponse.getToken().getTokenData().getValue());
+			token.setTokenData(ta);
+			token.setToken_type("FDToken");
+			trans.setToken(token);
+
+			trans.setCard(null);
+			trans.setBilling(null);
+			trans.setAuth(null);
+			trans.setTa_token(null);
+			trans.setType(null);
+
+			//statusString = "before purchase transaction";
+			//statusString = trans.getToken().getToken_type().toUpperCase();
+			Object responseObject1 = clientHelper.purchaseTransactionToken(trans);
+			//statusString = ((TransactionResponse) responseObject1).getValidationStatus();
+			//statusString = " called purchase transaction";
+			statusString = "purchase called";
+			statusString = statusString  + "purchase successfull";
+			statusString = statusString  + ((UserTransactionResponse)responseObject1).getResponseString() + splitter;
+
+			/*
+			System.out.println("Response : " + responseObject1.toString());
+
 			//UserTransactionResponse uresp1 = (UserTransactionResponse)(responseObject1);
 			//TransactionResponse resp1 = uresp1; //uresp.getBody();
 			TransactionResponse resp1 = (TransactionResponse)(responseObject1);
@@ -6461,7 +6892,210 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			statusString = statusString + "Exception :"+ e.getMessage() + splitter;
 		}
 	}
-	
+
+
+	//For Capture using TokenGeneration-GET method
+	private void CallCaptureVisaGetGetToken()
+	{
+		try
+		{
+			cardtypeSecondary = CardType.CARD_VISA;
+			FirstAPIClientV2Helper clientHelper = new FirstAPIClientV2Helper();
+
+			//Generate Token
+			clientHelper.setAppId(TransactionDataProvider.appIdInt);
+			clientHelper.setSecuredSecret(TransactionDataProvider.secureIdInt);
+			clientHelper.setToken(TransactionDataProvider.tokenInt);
+			clientHelper.setTrToken(TransactionDataProvider.trTokenInt);
+			clientHelper.setUrl(TransactionDataProvider.urlInt);
+
+			//generate
+			//generate
+			category = TransactionCategory.CATEGORY_GENERATETOKEN;
+			TransactionRequest trans = getPrimaryTransactionForTransType();
+
+//Start comment for tokened capture
+			/*trans.setType("FDToken");
+
+			trans.getCard().setNumber("4012000033330026");
+			trans.getCard().setName("John Smith");
+			trans.getCard().setExpiryDt("0416");
+			trans.getCard().setCvv("123");
+			trans.getCard().setType("visa");
+
+			trans.setAuth("false");
+			trans.setTa_token("NOIW");
+
+			trans.setToken(null);
+			trans.setBilling(null);
+			trans.setTransactionType(null);
+			trans.setPaymentMethod(null);
+			trans.setAmount(null);
+			trans.setCurrency(null);
+
+			//statusString = "received generate transaction";
+			Object responseObject = clientHelper.getTokenTransaction(trans);
+			//statusString = "called generate transaction";
+			statusString = statusString + ((UserTransactionResponse)responseObject).getResponseString() + splitter;
+
+			System.out.println("Response : " + responseObject.toString());
+
+			//UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+			//TransactionResponse resp = uresp; //uresp.getBody();
+			TransactionResponse resp = (TransactionResponse)responseObject; //uresp.getBody();
+			//System.out.println(uresp.getResponseMessage() );
+			System.out.println(resp.getStatus());
+
+			TransactionResponse responseToken = resp;
+
+			//Authorize
+			category = TransactionCategory.CATEGORY_FDTOKEN;
+			//TransactionRequest transGen = getPrimaryTransactionForTransType();
+
+			//category = TransactionCategory.CATEGORY_FDTOKEN;
+*/
+			//TransactionRequest trans = getPrimaryTransactionForTransType();
+			//trans = getPrimaryTransactionForTransType();
+			//trans.getToken().getTokenData().setValue(responseToken.getToken().getTokenData().getValue());
+
+/*
+
+			trans.setReferenceNo("abc1412096293369");
+			trans.setTransactionType("authorize");
+			trans.setPaymentMethod("token");
+			trans.setAmount("1");
+			trans.setCurrency("USD");
+
+			Token token = new Token();
+			Transarmor ta = new Transarmor();
+
+			ta.setValue("2833693264441732");
+			//String s = responseToken.getToken().getTokenData().getValue();
+			ta.setValue(responseToken.getToken().getTokenData().getValue());
+			ta.setName(responseToken.getToken().getTokenData().getName());
+			ta.setExpiryDt(responseToken.getToken().getTokenData().getExpiryDt());
+			ta.setType(responseToken.getToken().getTokenData().getType());
+
+			//ta.setName("John Smith");
+			//ta.setExpiryDt("0416");
+			//ta.setType("mastercard");
+
+			token.setTokenData(ta);
+			//token.setTokenType("FDToken");
+			token.setToken_type("FDToken");
+			trans.setToken(token);
+
+			trans.setCard(null);
+			trans.setBilling(null);
+			trans.setAuth(null);
+			trans.setTa_token(null);
+			trans.setType(null);
+
+			//statusString = "calling transaction";
+			Object responseObject2 = clientHelper.authorizeTransactionToken(trans);
+			//System.out.println("Response : " + responseObject2.toString());
+			//statusString = "authorize called";
+			statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+			//System.out.println("Response : " + responseObject2.toString());
+
+			//UserTransactionResponse uresp2 = (UserTransactionResponse)(responseObject2);
+			TransactionResponse resp2 = (TransactionResponse)(responseObject2); //uresp2; //uresp.getBody();
+			//System.out.println(resp2.getResponseMessage() );
+			//statusString = statusString + resp2.getStatus() + splitter;
+			//if(resp2.getTransactionStatus() == "approved")
+			//{
+			//System.out.println(uresp2.getTransactionStatus() );
+			//	System.out.println(resp2.getTransactionStatus() );
+			//}
+			//UserTransactionResponse responseToken2 =  uresp2;
+			TransactionResponse responseToken2 =  resp2;
+
+			//statusString = "0";
+			//statusString = responseToken2.getTransactionTag();
+*/
+			//capture
+
+			category = TransactionCategory.CATEGORY_FDTOKEN;
+		//	trans = getPrimaryTransactionForTransType();
+
+			trans.setTransactionTag("349990997");
+			//trans.setTransactionId("07698G");
+			trans.setId("07698G");
+
+			trans.setReferenceNo("abc1412096293369");
+			trans.setTransactionTag("1871007");
+			trans.setTransactionType(TransactionType.CAPTURE.name()) ;
+			trans.setPaymentMethod("token");
+			trans.setAmount("1");
+			trans.setCurrency("USD");
+			//statusString = "1";
+			//TransactionResponse.getToken().getTokenData().
+				//	TransactionResponse.setTransactionTag(responseToken2.getTransactionTag());
+
+			//setting the tage for tokenised
+
+
+			//statusString = "2";
+			trans.setTransactionId(TransactionResponse.getTransactionId());
+			trans.setTransactionTag(TransactionResponse.getTransactionTag());
+			//statusString = "3";
+			Token token = new Token();
+			Transarmor ta = new Transarmor();
+			//statusString = "4";
+			ta.setValue(TransactionResponse.getToken().getTokenData().getValue());
+			//statusString = "5";
+	        /*ta.setName(responseToken.getToken().getTokenData().getName());
+	        statusString = "6";
+	        ta.setExpiryDt(responseToken.getToken().getTokenData().getExpiryDt());
+	        statusString = "7";
+	        ta.setType(responseToken.getToken().getTokenData().getType());
+	        statusString = "8";
+	        */
+			System.out.println("token value from capture="+TransactionResponse.getToken().getTokenData().getValue());
+			ta.setName(TransactionResponse.getToken().getTokenData().getName());
+			ta.setExpiryDt(TransactionResponse.getToken().getTokenData().getExpiryDt());
+			ta.setType(TransactionResponse.getToken().getTokenData().getType());
+			//ta.setName("John Smith");
+			//ta.setExpiryDt("0416");
+			//ta.setType("mastercard");
+			token.setTokenData(ta);
+			token.setToken_type("FDToken");
+			trans.setToken(token);
+
+			trans.setCard(null);
+			trans.setBilling(null);
+
+			trans.setAuth(null);
+			trans.setTa_token(null);
+			trans.setType(null);
+
+			//statusString = "calling capture";
+			TransactionResponse responseObject4 = clientHelper.captureTransactionToken(trans);
+			//statusString = "called capture";
+			//Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
+			//System.out.println("Response : " + responseObject4.toString());
+			//String responseString = responseObject.toString();
+			//UserTransactionResponse uresp4 = (UserTransactionResponse)(responseObject4);
+			TransactionResponse resp4 = (TransactionResponse)(responseObject4); //uresp4; //uresp.getBody();
+			statusString = statusString + ((UserTransactionResponse)responseObject4).getResponseString() + splitter;
+			//System.out.println(resp4.getResponseMessage() );
+			//System.out.println(resp4.getStatus() );
+			//statusString = uresp.getResponseString();
+			//statusString = statusString + uresp4.getResponseString() + splitter;
+			//statusString = statusString + resp4.getStatus() + splitter;
+			//if(resp4.getTransactionStatus() == "approved")
+			//{
+			//System.out.println(uresp4.getTransactionStatus() );
+			//System.out.println(resp4.getTransactionStatus() );
+			//}
+
+		}catch(Exception e)
+		{
+			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+			//statusString = statusString + "Exception :"+ e.getMessage() + splitter;
+			//statusString = statusString + " Exception :"+ e.getMessage() ;
+		}
+	}
 	/* JSON pay load for transarmor capture
 	 * 
 	 */
@@ -9487,7 +10121,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 		        trans.setCurrency(null);
 				
 				//statusString = "received transaction";
-				Object responseObject = clientHelper.getTokenTransaction(trans);
+				Object responseObject = clientHelper.GETgetTokenTransaction(trans);
 				//statusString = "called transaction";
 				//statusString = responseObject.toString();
 				TransactionResponse tr1 = (TransactionResponse)responseObject;

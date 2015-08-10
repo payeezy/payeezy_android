@@ -323,5 +323,10 @@ public class TransactionRequest {
 		public void setCallback(String callback) {
 			this.callback = callback;
 		}
-	
+
+
+	@JsonProperty("js_security_key")
+	private String js_security_key;
+
+	public void setJSKey(String jskey){this.js_security_key=jskey;}
 }

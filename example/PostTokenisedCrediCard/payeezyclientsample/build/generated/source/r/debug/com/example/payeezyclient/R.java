@@ -27,27 +27,16 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
     }
     public static final class id {
-        public static final int action_example=0x7f090014;
-        public static final int action_settings=0x7f090013;
-        public static final int btn_avs=0x7f090007;
-        public static final int btn_check_attivazione=0x7f090004;
-        public static final int btn_check_token=0x7f090003;
-        public static final int btn_level3=0x7f090008;
-        public static final int btn_pagamento=0x7f090006;
-        public static final int btn_recurring=0x7f09000d;
-        public static final int btn_softdescriptors=0x7f09000b;
-        public static final int btn_splitshipments=0x7f09000c;
-        public static final int btn_telecheck=0x7f090005;
-        public static final int btn_threeds=0x7f09000a;
-        public static final int btn_token=0x7f090001;
-        public static final int btn_transarmor=0x7f090009;
-        public static final int btn_valuelink=0x7f090002;
-        public static final int btn_zerodollar=0x7f09000e;
-        public static final int container=0x7f090010;
-        public static final int drawer_layout=0x7f09000f;
-        public static final int navigation_drawer=0x7f090011;
+        public static final int action_example=0x7f090009;
+        public static final int action_settings=0x7f090008;
+        public static final int btn_getAuthorisetoken=0x7f090002;
+        public static final int btn_getPurchasetoken=0x7f090003;
+        public static final int btn_gettoken=0x7f090001;
+        public static final int container=0x7f090005;
+        public static final int drawer_layout=0x7f090004;
+        public static final int navigation_drawer=0x7f090006;
         public static final int scrollView1=0x7f090000;
-        public static final int section_label=0x7f090012;
+        public static final int section_label=0x7f090007;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -78,30 +67,36 @@ public final class R {
         public static final int button1=0x7f07000e;
         public static final int button2=0x7f07000f;
         public static final int capture=0x7f070010;
-        public static final int gettoken=0x7f070011;
-        public static final int hello_world=0x7f070012;
-        public static final int level2=0x7f070013;
-        public static final int level3=0x7f070014;
-        public static final int login=0x7f070015;
-        public static final int navigation_drawer_close=0x7f070016;
-        public static final int navigation_drawer_open=0x7f070017;
-        public static final int purchase=0x7f070018;
-        public static final int rc=0x7f070019;
-        public static final int recurring=0x7f07001a;
-        public static final int refund=0x7f07001b;
-        public static final int rm=0x7f07001c;
-        public static final int softdescriptors=0x7f07001d;
-        public static final int splitshipments=0x7f07001e;
-        public static final int telecheck=0x7f07001f;
-        public static final int threeds=0x7f070020;
-        public static final int title_activity_nav_main=0x7f070021;
-        public static final int title_section1=0x7f070022;
-        public static final int title_section2=0x7f070023;
-        public static final int title_section3=0x7f070024;
-        public static final int transarmor=0x7f070025;
-        public static final int valuelink=0x7f070026;
-        public static final int voidpayment=0x7f070027;
-        public static final int zerodollar=0x7f070028;
+        public static final int getauthcapturetoken=0x7f070011;
+        public static final int getauthorisetoken=0x7f070012;
+        public static final int getauthvoidtoken=0x7f070013;
+        public static final int getgettoken=0x7f070014;
+        public static final int getpurchaserefundtoken=0x7f070015;
+        public static final int getpurchasetoken=0x7f070016;
+        public static final int hello_world=0x7f070017;
+        public static final int level2=0x7f070018;
+        public static final int level3=0x7f070019;
+        public static final int login=0x7f07001a;
+        public static final int navigation_drawer_close=0x7f07001b;
+        public static final int navigation_drawer_open=0x7f07001c;
+        public static final int postgettoken=0x7f07001d;
+        public static final int purchase=0x7f07001e;
+        public static final int rc=0x7f07001f;
+        public static final int recurring=0x7f070020;
+        public static final int refund=0x7f070021;
+        public static final int rm=0x7f070022;
+        public static final int softdescriptors=0x7f070023;
+        public static final int splitshipments=0x7f070024;
+        public static final int telecheck=0x7f070025;
+        public static final int threeds=0x7f070026;
+        public static final int title_activity_nav_main=0x7f070027;
+        public static final int title_section1=0x7f070028;
+        public static final int title_section2=0x7f070029;
+        public static final int title_section3=0x7f07002a;
+        public static final int transarmor=0x7f07002b;
+        public static final int valuelink=0x7f07002c;
+        public static final int voidpayment=0x7f07002d;
+        public static final int zerodollar=0x7f07002e;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

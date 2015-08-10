@@ -23,7 +23,22 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
-    <string name="gettoken">GetToken</string>
+    <string name="postgettoken">GetToken</string>
+
+
+
+    <string name="getgettoken">Token Generation-GET</string>
+    <string name="getauthorisetoken">Authorise</string>
+    <string name="getpurchasetoken">Purchase</string>
+    <string name="getauthcapturetoken">AuthCapture</string>
+    <string name="getauthvoidtoken">AuthVoid</string>
+    <string name="getpurchaserefundtoken">PurchaseRefund</string>
+
+
+
+
+
+
     <string name="level2">Level2</string>
     <string name="level3">Level3</string>
     <string name="avs">AVS</string>

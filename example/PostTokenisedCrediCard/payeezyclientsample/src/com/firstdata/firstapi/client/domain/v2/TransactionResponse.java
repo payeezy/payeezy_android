@@ -37,10 +37,15 @@ public class TransactionResponse implements Cloneable{
 	private String validationStatus;
 	@JsonProperty("transaction_type")
 	private String transactionType;
+
+
 	@JsonProperty("transaction_id")
-	private String transactionId;
+	static String transactionId;
+
+	//changed to static for tokenised
 	@JsonProperty("transaction_tag")
-	private String transactionTag;
+
+	static String transactionTag;
 	@JsonProperty("method")
 	private String method;
 	@JsonProperty("amount")
@@ -56,10 +61,10 @@ public class TransactionResponse implements Cloneable{
 	private String tokenString;
 	
 	@JsonProperty("token")
-	private Token token;
+	static Token token;
 	
-	
-    public Token getToken() {
+	//change for the tokenised transaction
+    public static Token getToken() {
 		return token;
 	}
 
@@ -193,7 +198,7 @@ public class TransactionResponse implements Cloneable{
 	}
 	
 	
-	public String getTransactionId() {
+	public static String getTransactionId() {
 		return transactionId;
 	}
 
@@ -204,7 +209,7 @@ public class TransactionResponse implements Cloneable{
 
 
 	
-	public String getTransactionTag() {
+	public static String getTransactionTag() {
 		return transactionTag;
 	}
 

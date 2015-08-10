@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/payeezyandroid/payeezy_android-master/example/sampleapp6/payeezyclientsample/res/values/values.xml -->
+    <!-- From: file:/E:/clonedpayeezyandroid/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/values/values.xml -->
     <eat-comment/>
     <color name="backg">#ffcccccc</color>
     <color name="vassoio">#ffffffff</color>
-    <!-- From: file:/E:/payeezyandroid/payeezy_android-master/example/sampleapp6/payeezyclientsample/res/values/dimens.xml -->
+    <!-- From: file:/E:/clonedpayeezyandroid/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="navigation_drawer_width">240dp</dimen>
-    <!-- From: file:/E:/payeezyandroid/payeezy_android-master/example/sampleapp6/payeezyclientsample/res/values/strings.xml -->
+    <!-- From: file:/E:/clonedpayeezyandroid/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
@@ -28,13 +28,19 @@
     <string name="button1">button1</string>
     <string name="button2">button2</string>
     <string name="capture">Capture</string>
-    <string name="gettoken">GetToken</string>
+    <string name="getauthcapturetoken">AuthCapture</string>
+    <string name="getauthorisetoken">Authorise</string>
+    <string name="getauthvoidtoken">AuthVoid</string>
+    <string name="getgettoken">Token Generation-GET</string>
+    <string name="getpurchaserefundtoken">PurchaseRefund</string>
+    <string name="getpurchasetoken">Purchase</string>
     <string name="hello_world">Hello world!</string>
     <string name="level2">Level2</string>
     <string name="level3">Level3</string>
     <string name="login">Login</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="postgettoken">GetToken</string>
     <string name="purchase">Purchase</string>
     <string name="rc">rc</string>
     <string name="recurring">Recurring</string>
@@ -52,7 +58,7 @@
     <string name="valuelink">ValueLink</string>
     <string name="voidpayment">Void Payment</string>
     <string name="zerodollar">ZeroDollar</string>
-    <!-- From: file:/E:/payeezyandroid/payeezy_android-master/example/sampleapp6/payeezyclientsample/res/values/styles.xml -->
+    <!-- From: file:/E:/clonedpayeezyandroid/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

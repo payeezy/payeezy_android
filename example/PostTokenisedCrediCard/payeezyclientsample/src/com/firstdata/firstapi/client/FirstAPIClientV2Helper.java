@@ -324,10 +324,188 @@ public class FirstAPIClientV2Helper {
         System.out.println(utr.toString());
         return res;
     }
-    
+   //modified 7th aug
     public UserTransactionResponse GetTransactionResponse(String responseMessage)
     {
-    	
+
+		UserTransactionResponse response = new UserTransactionResponse();
+		response.setResponseString(responseMessage);
+		Token token = new Token();
+		Transarmor tokenData = new Transarmor();
+		token.setTokenData(tokenData);
+		response.setToken(token);
+		int beginIndex = 0;
+		int endIndex = 0;
+		//String objstr = obj.toString();
+		String objstr = responseMessage;
+		boolean tokenResponse = false;
+		objstr = objstr.trim();
+		if(objstr.startsWith("Payeezy.callback"))
+		{
+			objstr = objstr.substring(19, objstr.length()); //("Payeezy.callback", "");
+			objstr = objstr.trim();
+			tokenResponse = true;
+		}
+
+		String[] responseData = objstr.split(",");
+
+		for(int i=0;i<responseData.length;i++)
+		{
+			String str = responseData[i];
+
+			String[] dataVals = str.split("=");
+			//String[] dataVals = str.split(":");
+			if(tokenResponse)
+			{
+				str =str.trim();
+				dataVals = str.split(",");
+			}
+			/*if(str.contains(":"))
+			{
+				str =str.trim();
+				dataVals = str.split(":");
+			}*/
+			if(dataVals.length >=2)
+			{
+				dataVals[1] = dataVals[1].replace("{", "");
+				dataVals[1] = dataVals[1].replace("}", "");
+				dataVals[1] = dataVals[1].replace(":", "");
+				dataVals[1] = dataVals[1].replace("\"", "");
+				dataVals[1] = dataVals[1].replace("[", "");
+			}
+			if(dataVals.length >=3)
+			{
+				dataVals[2] = dataVals[2].replace("{", "");
+				dataVals[2] = dataVals[2].replace("}", "");
+				dataVals[2] = dataVals[2].replace(":", "");
+				dataVals[2] = dataVals[2].replace("\"", "");
+				dataVals[2] = dataVals[2].replace("[", "");
+			}
+
+			if(dataVals[0].contains("results"))
+			{
+				String correlationID = dataVals[2];
+				response.setCorrelationID(correlationID);
+			}
+
+
+
+
+			//if(str.contains("correlation_id"))
+			if(dataVals[0].contains("correlation_id"))
+			{
+				String correlationID = dataVals[1];
+				response.setCorrelationID(correlationID);
+			}
+			if(dataVals[0].contains("status"))
+			{
+				if(tokenResponse)
+				{
+					String status = dataVals[1];
+					try
+					{
+						int stat = Integer.parseInt(status);
+					}
+					catch(Exception e)
+					{
+						System.out.println(e.getMessage());
+					}
+					if(status.length()<6)  //if(stat>0)
+					{
+						response.setStatus(status);
+					}
+				}
+				else
+				{
+					String status = dataVals[1];
+					response.setStatus(status);
+				}
+			}
+			if(dataVals[0].contains("type"))
+			{
+				String type = dataVals[1];
+				TransactionResponse.getToken().setToken_type(type);
+			}
+			if(dataVals[0].contains("token"))
+			{
+				String cardtype = dataVals[1];
+				if(dataVals.length >2)
+				{
+					cardtype = dataVals[2];
+				}
+				TransactionResponse.getToken().getTokenData().setType(cardtype);
+			}
+			if(dataVals[0].contains("cardholder_name"))
+			{
+				String name = dataVals[1];
+				TransactionResponse.getToken().getTokenData().setName(name);
+			}
+
+			if(dataVals[0].contains("exp_date"))
+			{
+				String expDate = dataVals[1];
+				TransactionResponse.getToken().getTokenData().setExpiryDt(expDate);
+			}
+			if(dataVals[0].contains("value"))
+			{
+				//String value="2833693264441732";
+				String value = dataVals[1];
+
+
+			/*	int indexOfOpenBracket = 0;
+				int indexOfLastBracket = value.lastIndexOf(" ");
+
+				System.out.println(value.substring(indexOfOpenBracket, indexOfLastBracket));
+				value=value.substring(indexOfOpenBracket, indexOfLastBracket);
+				System.out.println("tokenvalue after substr="+value);
+				value=value.trim();
+				System.out.println("tokenvalue after trim="+value);
+
+
+				System.out.println("tokenvalue after trim=" + value);*/
+				TransactionResponse.getToken().getTokenData().setValue(value);
+			}
+
+			if(dataVals[0].contains("transaction_id"))
+			{
+				String transactionId = dataVals[1];
+				response.setTransactionId(transactionId);
+			}
+			if(dataVals[0].contains("transaction_tag"))
+			{
+				String transactionTag = dataVals[1];
+				response.setTransactionTag(transactionTag);
+			}
+			if(dataVals[0].contains("amount"))
+			{
+				String amount = dataVals[1];
+				response.setAmount(amount);
+			}
+			if(dataVals[0].contains("transaction_status"))
+			{
+				String transactionStatus = dataVals[1];
+				response.setTransactionStatus(transactionStatus);
+			}
+			if(dataVals[0].contains("validation_status"))
+			{
+				String validation_status = dataVals[1];
+				response.setValidationStatus(validation_status);
+			}
+			if(dataVals[0].contains("transaction_type"))
+			{
+				String transaction_type = dataVals[1];
+				response.setTransactionType(transaction_type);
+			}
+			if(dataVals[0].contains("method"))
+			{
+				String method = dataVals[1];
+				response.setMethod(method);
+			}
+
+		}
+		return response;
+
+    	/*System.out.println("response message="+responseMessage);
     	String responseString = responseMessage;
     	UserTransactionResponse  transResponse = new UserTransactionResponse();
     	try
@@ -338,20 +516,26 @@ public class FirstAPIClientV2Helper {
 	    	transResponse.setBody(response);
 	    	
 	    	String[] strArray =  responseString.split(",");
-	    	
-	    	int start = responseString.indexOf("<") ;
+
+
+	    	//int start = responseString.indexOf("<") ;
+			int start = responseString.indexOf("{") ;
 	    	int end = responseString.indexOf(",") ;
-	    	String resCode = responseString.substring(start, end);
-	    	if(resCode.startsWith("<"))
+	    	String resCode = responseString.substring(start+1, end);
+			System.out.println("resCode="+resCode);
+	    	//if(resCode.startsWith("<"))
+			/*if(resCode.startsWith("{"))
 	    	{
-	    		resCode = resCode.replaceFirst("<", "");
-	    	}
-	    	String[] codes = resCode.split(" ");
+	    		resCode = resCode.replaceFirst("{", "");
+	    	}*/
+	    /*	String[] codes = resCode.split(" ");
 	    	transResponse.setResponseCode(codes[0]);
-	    	transResponse.setResponseMessage(codes[1]);
-	    	
-	    	end = responseString.lastIndexOf(",");
-	    	responseString = responseString.substring(start, end);
+	    	transResponse.setResponseMessage(codes[1]);*/
+
+		//	start=responseString.indexOf(" ");
+	    //	end = responseString.lastIndexOf(",");
+	    	//responseString = responseString.substring(start, end);
+		//	resCode = responseString.substring(start, end);
 	    	/*
 	    	start = responseString.indexOf("method");
 	    	end = responseString.indexOf("," , start);
@@ -366,7 +550,7 @@ public class FirstAPIClientV2Helper {
 			}
 	    	*/
 	    	
-	    	for(int i=0;i<strArray.length;i++)
+	    /*	for(int i=0;i<strArray.length;i++)
 	    	{
 	    		try
 	    		{
@@ -467,6 +651,7 @@ public class FirstAPIClientV2Helper {
 					    		{
 					    			//transResponse.getBody().setBankMessage(values[1]);
 					    			transResponse.setBankMessage(values[1]);
+									System.out.println("bank msg="+transResponse.getBankMessage());
 					    		}
 					    		if(values[0] == "gateway_resp_code")
 					    		{
@@ -505,7 +690,7 @@ public class FirstAPIClientV2Helper {
 						       			type = type.replace("}", "");
 						       			type = type.replace(":", "");
 						       			type = type.replace("\"", "");
-							       	   response.getToken().setToken_type(type);
+							       	   TransactionResponse.getToken().setToken_type(type);
 					       		   }
 					       		   if(values[0].contains("token"))
 					       		   {
@@ -519,7 +704,7 @@ public class FirstAPIClientV2Helper {
 						       			cardtype = cardtype.replace(":", "");
 						       			cardtype = cardtype.replace("\"", "");
 						       			//response.getToken().getToken_data().setType(cardtype);
-						       			response.getToken().getTokenData().setType(cardtype);
+						       			TransactionResponse.getToken().getTokenData().setType(cardtype);
 					       		   }
 				    		}
 			    		}
@@ -531,136 +716,318 @@ public class FirstAPIClientV2Helper {
 	    		}
 	    	}
 	    	transResponse.setBody(response);
+
+
     	}
     	catch(Exception e)
     	{
     		System.out.println(e.getMessage());
     	}
-    	
-    	return transResponse;
+		System.out.println("bank msg=" + transResponse.getBankMessage());
+		System.out.println("status="+transResponse.getTransactionStatus());
+    	return transResponse;*/
     }
-    
-    private TransactionResponse doPrimaryTransaction(TransactionRequest trans) throws Exception{
-    	
-    	String url=this.url+"/transactions";
-        //if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
+
+	private TransactionResponse doPrimaryTransaction(TransactionRequest trans) throws Exception{
+
+		String url=this.url+"/transactions";
+		//if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
     	/*
     	//if( (trans.getToken() != null) && (trans.getToken().getToken_type() != null) && (trans.getToken().getToken_type().toUpperCase() == "FDTOKEN") )
         //{
 	    //       	url=this.url+"/transactions/tokens";
         //}
         */
-    	//url=this.url+"/transactions/tokens";
-    	
-    	if((trans.getTransactionType() == null) || (trans.getTransactionType() == "" ))
-    	{
-    		//url=this.url+"/transactions/tokens";
+		//url=this.url+"/transactions/tokens";
+
+		if((trans.getTransactionType() == null) || (trans.getTransactionType() == "" ))
+		{
+			//url=this.url+"/transactions/tokens";
 			url="https://api-cert.payeezy.com/v1"+"/transactions/tokens";
-    	}
-    	else
-    	{
-	    	if((trans.getPaymentMethod().toLowerCase() != "valuelink") && (trans.getPaymentMethod().toLowerCase() != "token")  && (trans.getPaymentMethod().toLowerCase() != "3ds"))
-	    	{
-		        Assert.notNull(trans.getCard().getName(),"Card holder name is empty");
-	
-		        Assert.notNull(trans.getCard().getExpiryDt(),"Card Expiry date is not present");
-		        Assert.notNull(trans.getCard().getNumber(),"Card number is not present");
-	    	}
-	        
-	        if(trans.getPaymentMethod().toLowerCase() == "valuelink")
-	    	{
-	        	Assert.notNull(trans.getGiftcard().getCc_number(),"Value Link Card number is not present");
-	    	}
-	        if( (trans.getTransactionType() != null) || (trans.getTransactionType() != "")  || (trans.getTransactionType().toLowerCase() != "deactivate"))
-	        {
-	        	if(!(url.endsWith("tokens")))
-	        	{
-	        		//Assert.notNull(trans.getAmount(),"Amount is not present");
-	        	}
-	        }
-	        if(!(url.endsWith("tokens")))
-	        {
-	        	//Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
-	        }
-	        
-	        if((trans.getEciindicator() == "5") && (trans.getTransactionType().toLowerCase().equalsIgnoreCase("void")))
-	        {
-	        	trans.setBilling(null);
-	        	trans.setEciindicator(null);
-	        }
-    	}
-    	
-        //org.codehaus.jackson.map.ObjectMapper objectMapper = new org.codehaus.jackson.map.ObjectMapper();
-        //com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
-        //objectMapper.setconfigure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        //objectMapper.configure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    	//String url=this.url+"/transactions";
-        //if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
+		}
+		else
+		{
+			if((trans.getPaymentMethod().toLowerCase() != "valuelink") && (trans.getPaymentMethod().toLowerCase() != "token")  && (trans.getPaymentMethod().toLowerCase() != "3ds"))
+			{
+				Assert.notNull(trans.getCard().getName(),"Card holder name is empty");
+
+				Assert.notNull(trans.getCard().getExpiryDt(),"Card Expiry date is not present");
+				Assert.notNull(trans.getCard().getNumber(),"Card number is not present");
+			}
+
+			if(trans.getPaymentMethod().toLowerCase() == "valuelink")
+			{
+				Assert.notNull(trans.getGiftcard().getCc_number(),"Value Link Card number is not present");
+			}
+			if( (trans.getTransactionType() != null) || (trans.getTransactionType() != "")  || (trans.getTransactionType().toLowerCase() != "deactivate"))
+			{
+				if(!(url.endsWith("tokens")))
+				{
+					//Assert.notNull(trans.getAmount(),"Amount is not present");
+				}
+			}
+			if(!(url.endsWith("tokens")))
+			{
+				//Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
+			}
+
+			if((trans.getEciindicator() == "5") && (trans.getTransactionType().toLowerCase().equalsIgnoreCase("void")))
+			{
+				trans.setBilling(null);
+				trans.setEciindicator(null);
+			}
+		}
+
+		//org.codehaus.jackson.map.ObjectMapper objectMapper = new org.codehaus.jackson.map.ObjectMapper();
+		//com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
+		//objectMapper.setconfigure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		//objectMapper.configure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		//String url=this.url+"/transactions";
+		//if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
+		//{
+		//       	url=this.url+"/transactions/tokens";
+		//}
+		//if( ( trans.getToken() == null) && ( trans.getType() == "FDToken") && ( trans.getTa_token() == "NOIW") && ( trans.getAuth() == "false"))
+		//{
+		////url=this.url+"/securitytokens";
+		//	url=this.url+"/transactions/tokens";
+		//}
+
+
+		//if((trans.getTransactionType() == null) ||(trans.getTransactionType() == ""))
+		//{
+		//	url=this.url+"/transactions/tokens";
+		//}
+
+		String payload=getJSONObject(trans);
+		HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
+		//ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class);
+		//UserTransactionResponse responseObject= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
+		//ResponseEntity<UserTransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
+		//naked void
+		//String transId = trans.getTransactionId();
+		//  if(trans.getTransactionType().toLowerCase().equals( TransactionType.VOID.name().toLowerCase()))
+		//{
+		//	//naked void
+		//	trans.setTransactionId(null);
+		//	request.getBody().setTransactionId(null);
+		//}
+		//ResponseEntity<TransactionResponse[]> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse[].class);
+		//request.getHeaders().setUserAgent(System.getProperty("http.agent"));
+
+		//request.getHeaders().setUserAgent("Mozilla/5.0 ( compatible ) ");
+		System.out.println("url="+url);
+		System.out.println("request="+request);
+		ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class);
+		//if(trans.getTransactionType().toUpperCase() == TransactionType.PURCHASE.name().toUpperCase())
+		//{
+		//	return null;
+
+		//}
+		//else
+		//{
+		System.out.println(response.toString());
+		String resString = response.toString();
+
+		UserTransactionResponse uresponseStr =  new UserTransactionResponse();
+		if(resString.contains("FDToken"))
+		{
+			uresponseStr.setResponseString(resString);
+			UserTransactionResponse tres = GetTokenTransactionResponse(resString);
+			uresponseStr = tres;
+		}
+		else
+		{
+			//UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
+			uresponseStr = GetTransactionResponse(resString);
+			uresponseStr.setResponseString(resString);
+			TransactionResponse responseStr = (TransactionResponse)uresponseStr;
+			System.out.println(responseStr);
+		}
+
+		return uresponseStr;
+		//}
+
+	}
+
+//new method for GET- 4th aug
+    private TransactionResponse doPrimaryTransactionGET(TransactionRequest trans) throws Exception{
+
+
+//changed for GET
+			//String url;
+
+	String	url="https://api-cert.payeezy.com/v1"+"/securitytokens?"
+				+
+				"auth=false&ta_token=NOIW&apikey=y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a&"+
+				"js_security_key=js-6125e57ce5c46e10087a545b9e9d7354c23e1a1670d9e9c7&"
+				+"callback=Payeezy.callback&"
+				+"type=FDToken&"+"credit_card.type=mastercard&"+"credit_card.cardholder_name=xyz&"+"credit_card.card_number=5424180279791732&" +
+				"credit_card.exp_date=0416&"+"credit_card.cvv=123";
+
+
+		/*Map<String, String> params = new HashMap<String, String>();
+		params.put("auth", "false");
+		params.put("ta_token", "NOIW");
+		params.put("apikey", "y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a");
+		params.put("js_security_key", "6125e57ce5c46e10087a545b9e9d7354c23e1a1670d9e9c7");
+		params.put("callback", "Payeezy.callback");
+		params.put("type", "FDToken");
+		params.put("credit_card.type", "mastercard");
+		params.put("credit_card.cardholder_name", "xyz");
+		params.put("credit_card.card_number", "5424180279791732");
+		params.put("credit_card.exp_date", "0416");
+		params.put("credit_card.cvv", "123");
+*/
+
+
+
+
+
+
+		//if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
+    	/*
+    	//if( (trans.getToken() != null) && (trans.getToken().getToken_type() != null) && (trans.getToken().getToken_type().toUpperCase() == "FDTOKEN") )
         //{
 	    //       	url=this.url+"/transactions/tokens";
         //}
-        //if( ( trans.getToken() == null) && ( trans.getType() == "FDToken") && ( trans.getTa_token() == "NOIW") && ( trans.getAuth() == "false"))
-        //{
-        	////url=this.url+"/securitytokens";
-        //	url=this.url+"/transactions/tokens";
-        //}
-        
-    	
-    	//if((trans.getTransactionType() == null) ||(trans.getTransactionType() == ""))
-    	//{
-        //	url=this.url+"/transactions/tokens";
-    	//}
-        
-    	String payload=getJSONObject(trans);
-        HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
-        //ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class);
-        //UserTransactionResponse responseObject= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
-        //ResponseEntity<UserTransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
-        //naked void
-        //String transId = trans.getTransactionId(); 
-        //  if(trans.getTransactionType().toLowerCase().equals( TransactionType.VOID.name().toLowerCase()))
-        //{
-        //	//naked void
-        //	trans.setTransactionId(null);
-        //	request.getBody().setTransactionId(null);
-        //}
-        //ResponseEntity<TransactionResponse[]> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse[].class);
-        //request.getHeaders().setUserAgent(System.getProperty("http.agent"));
-       
-        //request.getHeaders().setUserAgent("Mozilla/5.0 ( compatible ) ");
-        ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class);
-        //if(trans.getTransactionType().toUpperCase() == TransactionType.PURCHASE.name().toUpperCase())
-        //{
-        //	return null;
-        	
-        //}
-        //else
-        //{
-	        System.out.println(response.toString());
-	        String resString = response.toString();
-	        
-	        UserTransactionResponse uresponseStr =  new UserTransactionResponse();
-	        if(resString.contains("FDToken"))
-	        {
-	        	uresponseStr.setResponseString(resString);
-	        	UserTransactionResponse tres = GetTokenTransactionResponse(resString);
-	        	uresponseStr = tres;
-	        }
-	        else
-	        {
-		        //UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
-	        	uresponseStr = GetTransactionResponse(resString);
-		        uresponseStr.setResponseString(resString);
-		        TransactionResponse responseStr = (TransactionResponse)uresponseStr;
-		        System.out.println(responseStr);
-	        }
-	        
-	        return uresponseStr;
-        //}
-            
-    }
-    
-    @SuppressWarnings("unused")
+        */
+			//url=this.url+"/transactions/tokens";
+
+			if((trans.getTransactionType() == null) || (trans.getTransactionType() == "" ))
+			{
+				//url=this.url+"/transactions/tokens";
+				//url="https://api-cert.payeezy.com/v1"+"/securitytokens";
+			}
+			else
+			{
+				if((trans.getPaymentMethod().toLowerCase() != "valuelink") && (trans.getPaymentMethod().toLowerCase() != "token")  && (trans.getPaymentMethod().toLowerCase() != "3ds"))
+				{
+					Assert.notNull(trans.getCard().getName(),"Card holder name is empty");
+
+					Assert.notNull(trans.getCard().getExpiryDt(),"Card Expiry date is not present");
+					Assert.notNull(trans.getCard().getNumber(),"Card number is not present");
+				}
+
+				if(trans.getPaymentMethod().toLowerCase() == "valuelink")
+				{
+					Assert.notNull(trans.getGiftcard().getCc_number(),"Value Link Card number is not present");
+				}
+				if( (trans.getTransactionType() != null) || (trans.getTransactionType() != "")  || (trans.getTransactionType().toLowerCase() != "deactivate"))
+				{
+					if(!(url.endsWith("tokens")))
+					{
+						//Assert.notNull(trans.getAmount(),"Amount is not present");
+					}
+				}
+				if(!(url.endsWith("tokens")))
+				{
+					//Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
+				}
+
+				if((trans.getEciindicator() == "5") && (trans.getTransactionType().toLowerCase().equalsIgnoreCase("void")))
+				{
+					trans.setBilling(null);
+					trans.setEciindicator(null);
+				}
+			}
+
+			//org.codehaus.jackson.map.ObjectMapper objectMapper = new org.codehaus.jackson.map.ObjectMapper();
+			//com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
+			//objectMapper.setconfigure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			//objectMapper.configure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+			//String url=this.url+"/transactions";
+			//if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
+			//{
+			//       	url=this.url+"/transactions/tokens";
+			//}
+			//if( ( trans.getToken() == null) && ( trans.getType() == "FDToken") && ( trans.getTa_token() == "NOIW") && ( trans.getAuth() == "false"))
+			//{
+			////url=this.url+"/securitytokens";
+			//	url=this.url+"/transactions/tokens";
+			//}
+
+
+			//if((trans.getTransactionType() == null) ||(trans.getTransactionType() == ""))
+			//{
+			//	url=this.url+"/transactions/tokens";
+			//}
+
+
+
+			String payload=getJSONObject(trans);
+			//HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans);
+
+
+		HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
+			//ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class);
+			//UserTransactionResponse responseObject= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
+			//ResponseEntity<UserTransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
+			//naked void
+			//String transId = trans.getTransactionId();
+			//  if(trans.getTransactionType().toLowerCase().equals( TransactionType.VOID.name().toLowerCase()))
+			//{
+			//	//naked void
+			//	trans.setTransactionId(null);
+			//	request.getBody().setTransactionId(null);
+			//}
+			//ResponseEntity<TransactionResponse[]> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse[].class);
+			//request.getHeaders().setUserAgent(System.getProperty("http.agent"));
+
+			//request.getHeaders().setUserAgent("Mozilla/5.0 ( compatible ) ");
+
+			System.out.println("url="+url);
+
+
+	//		System.out.println("request="+request);
+//TransactionResponse trobj=new TransactionResponse();
+
+		//	ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.GET, request, Object.class);
+		//ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.GET, request, Object.class);
+
+
+
+		//TransactionResponse response=restTemplate.getForObject(url, TransactionResponse.class);
+		//String response=restTemplate.getForObject(url, String.class,params);
+		String response=restTemplate.getForObject(url, String.class);
+			//if(trans.getTransactionType().toUpperCase() == TransactionType.PURCHASE.name().toUpperCase())
+			//{
+			//	return null;
+
+			//}
+			//else
+			//{
+
+
+		System.out.println("response="+response);
+
+		//System.out.println(response.substring(88,104));
+		TransactionResponse r = GetTokenTransactionResponse(response.toString());
+		return r;
+
+			/*UserTransactionResponse uresponseStr =  new UserTransactionResponse();
+			if(resString.contains("FDToken"))
+			{
+				uresponseStr.setResponseString(resString);
+				UserTransactionResponse tres = GetTokenTransactionResponse(resString);
+				uresponseStr = tres;
+			}
+			else
+			{
+				//UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
+				uresponseStr = GetTransactionResponse(resString);
+				uresponseStr.setResponseString(resString);
+				TransactionResponse responseStr = (TransactionResponse)uresponseStr;
+				System.out.println(responseStr);
+			}*/
+
+			//return response;
+			//}
+
+		}
+
+
+		@SuppressWarnings("unused")
 	private TransactionResponse doGetPrimaryTransaction(TransactionRequest trans) throws Exception{
     	if(trans.getPaymentMethod().toLowerCase() != "valuelink")
     	{
@@ -681,6 +1048,10 @@ public class FirstAPIClientV2Helper {
         String payload=getJSONObject(trans);
         HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
         //request.getHeaders().setUserAgent(System.getProperty("http.agent"));
+
+		System.out.println("url="+ url);
+		System.out.println("request="+ request);
+
         ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.GET, request, Object.class);
         System.out.println(response.toString());
         String resString = response.toString();
@@ -875,10 +1246,21 @@ public class FirstAPIClientV2Helper {
     }
     
     public TransactionResponse getTokenTransaction(TransactionRequest trans) throws Exception {
-        
+
         return doPrimaryTransaction(trans);
     }
-    
+//Added for GET method aug 4th
+	public TransactionResponse GETgetTokenTransaction(TransactionRequest trans) throws Exception {
+		//return doGetPrimaryTransaction(trans);
+		return doPrimaryTransactionGET(trans);
+		//return doPrimaryTransaction(trans);
+	}
+
+	/*public TransactionResponse GETgetTokenTransaction(TransactionRequest trans) throws Exception {
+
+		return doPrimaryTransactionGET(trans);
+	}
+    */
  public TransactionResponse purchaseTransactionToken(TransactionRequest trans) throws Exception{
         
         trans.setTransactionType(TransactionType.PURCHASE.name().toLowerCase());
@@ -901,7 +1283,7 @@ public class FirstAPIClientV2Helper {
         trans.setTransactionType(TransactionType.VOID.name().toLowerCase()); 
         return doSecondaryTransactionObject(trans);
     }
-    
+
 
     public TransactionResponse getTokenTransactionGet(TransactionRequest trans) throws Exception {
         
@@ -909,7 +1291,7 @@ public class FirstAPIClientV2Helper {
     }
     
     
-    
+    //used for GET method
     private UserTransactionResponse GetTokenTransactionResponse(String obj)
     {
      	   UserTransactionResponse response = new UserTransactionResponse();
@@ -1008,7 +1390,7 @@ public class FirstAPIClientV2Helper {
      		   if(dataVals[0].contains("type"))
      		   {
 		       	    String type = dataVals[1];
-	       			response.getToken().setToken_type(type);
+	       			TransactionResponse.getToken().setToken_type(type);
      		   }
      		   if(dataVals[0].contains("token"))
      		   {
@@ -1017,29 +1399,43 @@ public class FirstAPIClientV2Helper {
 		       	    {
 		       		   cardtype = dataVals[2];
 		       	    }
-	       			response.getToken().getTokenData().setType(cardtype);
+				   TransactionResponse.getToken().getTokenData().setType(cardtype);
      		   }
      		   if(dataVals[0].contains("cardholder_name"))
      		   {
 		       	    String name = dataVals[1];
-	       			response.getToken().getTokenData().setName(name);
+				   TransactionResponse.getToken().getTokenData().setName(name);
      		   }
      		   
      		   if(dataVals[0].contains("exp_date"))
      		   {
 		       	    String expDate = dataVals[1];
-	       			response.getToken().getTokenData().setExpiryDt(expDate);
+				   TransactionResponse.getToken().getTokenData().setExpiryDt(expDate);
      		   }
      		   if(dataVals[0].contains("value"))
      		   {
+				   //String value="2833693264441732";
 		       	    String value = dataVals[1];
-	       			response.getToken().getTokenData().setValue(value);
+
+
+				   int indexOfOpenBracket = 0;
+				   int indexOfLastBracket = value.lastIndexOf(" ");
+
+				   System.out.println(value.substring(indexOfOpenBracket, indexOfLastBracket));
+				   value=value.substring(indexOfOpenBracket, indexOfLastBracket);
+				   System.out.println("tokenvalue after substr="+value);
+				   value=value.trim();
+				   System.out.println("tokenvalue after trim="+value);
+
+
+				   System.out.println("tokenvalue after trim=" + value);
+				   TransactionResponse.getToken().getTokenData().setValue(value);
      		   }
      		   
      		   if(dataVals[0].contains("transaction_id"))
      		   {
 		       	    String transactionId = dataVals[1];
-	       			response.setTransactionId(transactionId);
+				   response.setTransactionId(transactionId);
      		   }
      		   if(dataVals[0].contains("transaction_tag"))
      		   {
@@ -1049,7 +1445,7 @@ public class FirstAPIClientV2Helper {
      		   if(dataVals[0].contains("amount"))
      		   {
 		       	    String amount = dataVals[1];
-	       			response.setAmount(amount);
+				   response.setAmount(amount);
      		   }
      		   if(dataVals[0].contains("transaction_status"))
      		    {
@@ -1110,6 +1506,7 @@ public class FirstAPIClientV2Helper {
     public TransactionResponse doPrimaryTransactionObject(TransactionRequest trans) throws Exception{
 	    
     	String url=this.url+"/transactions";
+		System.out.println("url from authorise="+url);
         if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
         {
 	           	url=this.url+"/transactions/tokens";
@@ -1120,15 +1517,31 @@ public class FirstAPIClientV2Helper {
             Assert.notNull(trans.getAmount(),"Amount is not present");
 	           Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
         }
-        
+
+        System.out.println("token before JSON="+TransactionResponse.getToken().getTokenData().getValue());
         String payload=getJSONObject(trans);
+		System.out.println("Purchasepayload after JSON="+payload);
         HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
         //ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class);
+		System.out.println("url for authorise="+url);
         ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class);
         //ResponseEntity<HashMap> response= restTemplate.exchange(url, HttpMethod.POST, request, HashMap.class);
         //return doTransaction(trans,credentials);
         Object o2 = response.getBody();
-        TransactionResponse resp = GetTokenTransactionResponse(o2.toString());
+
+		//trying
+		/*
+		UserTransactionResponse uresponseStr =  new UserTransactionResponse();
+		if(resString.contains("FDToken"))
+		{
+			uresponseStr.setResponseString(resString);
+			UserTransactionResponse tres = GetTokenTransactionResponse(resString);
+			uresponseStr = tres;
+		}		 */
+
+        TransactionResponse resp = GetTransactionResponse(o2.toString());
+
+		System.out.println("message after purchase="+o2.toString());
         //return (TransactionResponse) response.getBody();
         return resp;
 //         return null;
@@ -1136,11 +1549,13 @@ public class FirstAPIClientV2Helper {
    }
    public TransactionResponse doSecondaryTransactionObject(TransactionRequest trans) throws Exception {
         Assert.notNull(trans.getTransactionTag(),"Transaction Tag is not present");
-        Assert.notNull(trans.getId(),"Id is not present");    
-        Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
+        Assert.notNull(trans.getId(), "Id is not present");
+        Assert.notNull(trans.getTransactionType(), "Transaction type is not present");
         String url=this.url+"/transactions/{id}";
         trans.setTransactionType(trans.getTransactionType().toLowerCase());
         String payload=getJSONObject(trans);
+	   System.out.println("secondary trans capture token="+TransactionResponse.getToken().getTokenData().getValue());
+	   System.out.println("payload for capture="+payload);
         HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
         //ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class,trans.getId());
         ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class, trans.getId());

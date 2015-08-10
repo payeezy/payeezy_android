@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\payeezyandroid\payeezy_android-master\example\sampleapp6\payeezyclientsample\assets"/></dataSet><dataSet config="debug"><source path="E:\payeezyandroid\payeezy_android-master\example\sampleapp6\payeezyclientsample\build-types\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\assets"/></dataSet><dataSet config="debug"><source path="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build-types\debug\assets"/></dataSet></merger>
