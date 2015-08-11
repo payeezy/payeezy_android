@@ -34,6 +34,8 @@
     <string name="getauthvoidtoken">AuthVoid</string>
     <string name="getpurchaserefundtoken">PurchaseRefund</string>
 
+    <string name="posttoken">Token Generation-POST</string>
+
 
 
 

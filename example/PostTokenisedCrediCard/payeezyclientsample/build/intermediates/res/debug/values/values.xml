@@ -41,6 +41,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="postgettoken">GetToken</string>
+    <string name="posttoken">Token Generation-POST</string>
     <string name="purchase">Purchase</string>
     <string name="rc">rc</string>
     <string name="recurring">Recurring</string>

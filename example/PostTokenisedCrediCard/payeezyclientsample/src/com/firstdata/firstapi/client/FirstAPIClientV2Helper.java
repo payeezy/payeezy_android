@@ -834,20 +834,20 @@ public class FirstAPIClientV2Helper {
 		String resString = response.toString();
 
 		UserTransactionResponse uresponseStr =  new UserTransactionResponse();
-		if(resString.contains("FDToken"))
+	/*	if(resString.contains("FDToken"))
 		{
 			uresponseStr.setResponseString(resString);
 			UserTransactionResponse tres = GetTokenTransactionResponse(resString);
 			uresponseStr = tres;
 		}
 		else
-		{
+		{*/
 			//UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
 			uresponseStr = GetTransactionResponse(resString);
 			uresponseStr.setResponseString(resString);
 			TransactionResponse responseStr = (TransactionResponse)uresponseStr;
 			System.out.println(responseStr);
-		}
+
 
 		return uresponseStr;
 		//}

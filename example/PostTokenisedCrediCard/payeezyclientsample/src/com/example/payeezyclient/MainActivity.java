@@ -73,6 +73,17 @@ public class MainActivity extends Activity {
 			System.out.println("Exception GetToken :" + e.getMessage());
 		}
 	}*/
+
+	//Token Generation using POST method--08-11
+	public void onPostToken(View view)
+	{
+		RequestTask rTask5 = new RequestTask(getApplicationContext());
+		rTask5.execute("gettokenvisa");
+		//rTask5.get();
+		//rTask5.wait();
+		System.out.println("gettoken call end");
+	}
+
 //Added for GET token
 	public void onGetGetToken(View view)
 	{
@@ -195,16 +206,16 @@ public class MainActivity extends Activity {
 				rTask5.execute("gettoken");
 				//rTask5.wait();
 				System.out.println("gettoken call end");
-	    	}
+	    	}*/
 	    	
-	    	if(uri[0].toLowerCase().equalsIgnoreCase("gettokenvisa"))
+	    	/***********************************if(uri[0].toLowerCase().equalsIgnoreCase("gettokenvisa"))
 	    	{
 	    		RequestTask rTask5 = new RequestTask(getApplicationContext());
 				rTask5.execute("gettokenvisa");
 				//rTask5.wait();
 				System.out.println("gettoken call end");
 	    	}
-	    	if(uri[0].toLowerCase().equalsIgnoreCase("gettokenmc"))
+	    	/*if(uri[0].toLowerCase().equalsIgnoreCase("gettokenmc"))
 	    	{
 	    		RequestTask rTask5 = new RequestTask(getApplicationContext());
 				rTask5.execute("gettokenmc");

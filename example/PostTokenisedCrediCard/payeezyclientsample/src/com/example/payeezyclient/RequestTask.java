@@ -115,11 +115,11 @@ public class RequestTask extends AsyncTask<String, String, String>{
     		CallGetTokenTransactions();
     		return "gettoken";
     	}
-    	
+    	//For Token Generation using POST method-08-11
     	if(uri[0].toLowerCase().equalsIgnoreCase("gettokenvisa"))
     	{
     		CallGetTokenTransactionsVisa();
-    		return "gettokenvisa";
+    		return "TokenGeneration POST";
     	}
 
 		//Added for GETgettoken aug 3rd
@@ -127,7 +127,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 		{
 			//CallGenerateTokenVisaGetTokenGet();
 			CallGETGetTokenTransactionsVisa();
-			return "getgettokenvisa";
+			return "TokenGeneration GET";
 		}
 		//Added for GETauthorisetoken aug 6th
 		if(uri[0].toLowerCase().equalsIgnoreCase("getauthorisetoken"))
@@ -137,7 +137,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			CallAuthorizeVisaGetGetToken();
 
 
-			return "getauthorisetoken";
+			return "Authorise Response";
 		}
 
 		//Added for GETpurchasetoken aug 6th
@@ -146,7 +146,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			//CallGenerateTokenVisaGetTokenGet();
 			//CallGETGetTokenTransactionsVisa();
 			CallPurchaseVisaGetGetToken();
-			return "getpurchasetoken";
+			return "Purchase Response";
 		}
 
 		//Added for GETauthcapturetoken aug 6th
@@ -156,17 +156,17 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			//CallGETGetTokenTransactionsVisa();
 			CallAuthorizeVisaGetGetToken();
 			CallCaptureVisaGetGetToken();
-			return "getauthcapturetoken";
+			return "Auth + Capture Response";
 		}
 
 //Added for GETauthvoidtoken aug 6th
 		if(uri[0].toLowerCase().equalsIgnoreCase("getauthvoidtoken"))
 		{
 			//CallGenerateTokenVisaGetTokenGet();
-			//CallGETGetTokenTransactionsVisa();
+			//CallGETGetTokenT+ ransactionsVisa();
 			CallAuthorizeVisaGetGetToken();
 			CallVoidVisaGetGetToken();
-			return "getauthcapturetoken";
+			return "Auth + Void Response";
 		}
 //Added for GETpurchaserefundtoken aug 6th
 		if(uri[0].toLowerCase().equalsIgnoreCase("getpurchaserefundtoken"))
@@ -175,7 +175,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			//CallGETGetTokenTransactionsVisa();
 			CallPurchaseVisaGetGetToken();
 			CallRefundVisaGetGetToken();
-			return "getpurchaserefundtoken";
+			return "Purchase + Refund Response";
 		}
 
     	if(uri[0].toLowerCase().equalsIgnoreCase("gettokenmc"))
@@ -438,7 +438,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
         System.out.println("Button Authorize Clicked" + result);
         //Toast.makeText( context, result + ":" + statusString, Toast.LENGTH_SHORT).show();
         String[] messages = statusString.split(splitter);
-        for(int i=0; i < messages.length; i++)
+       for(int i=0; i < messages.length; i++)
         {
         	Toast.makeText( context, result + ":" + messages[i], Toast.LENGTH_SHORT).show();
         	//Toast.makeText( context, result + ":" + statusString, Toast.LENGTH_SHORT).show();
@@ -480,6 +480,14 @@ public class RequestTask extends AsyncTask<String, String, String>{
 //		builder.create().show();
 		//builder.show();
 	//	dialog.cancel();
+	/*	AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+		// set title
+		alertDialogBuilder.setTitle("Game Over");
+		// set dialog message
+		alertDialogBuilder.setMessage("Press Esc to close the Application");
+		AlertDialog alertDialog = alertDialogBuilder.create();
+		alertDialog.show();*/
     }
     
     
@@ -684,7 +692,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
     	//CallVoidVisaGetToken();
     	
     }
-    
+    //Will be called for Token Generation using POST method
     private void CallGetTokenTransactionsVisa()
     {
     	CallGenerateTokenVisaGetToken();
@@ -6259,7 +6267,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 	/********************GET TOKEN *******************************************/
 	
 	
-	// Generate token
+	// Generate token using POST method
 
 	//changes made July 29th 11.13 am for cert settings
 	private void CallGenerateTokenVisaGetToken()
