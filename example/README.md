@@ -1,4 +1,4 @@
-# Purpose of PostTokenisedCreditCard payeezyclientsample
+#   Purpose of PostTokenisedCreditCard payeezyclientsample
 This sample application demonstrates the usage of tokenised creditcardvisa transactions 
 
 
