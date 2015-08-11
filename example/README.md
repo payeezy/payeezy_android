@@ -6,12 +6,18 @@ This sample application demonstrates the usage of tokenised creditcardvisa trans
 Please refer guide and javadocs for more information on android code.
 
 Android app:How ro run the app ?? 
-1. download/clone the source from git. 
-2. Use android studio 1.2.2 or eclipse tool and import project (gradle)
-3. Use appropriate Android sdk to compile and run the code 
-4. Use keyword gettokenvisa and click on login button 
-5. response will appear on the screen 
+
+*1. download/clone the source from git. 
+*2. Use android studio 1.2.2 or eclipse tool and import project (gradle)
+*3. Use appropriate Android sdk to compile and run the code 
+*4. Use keyword gettokenvisa and click on login button 
+*5. response will appear on the screen 
+
 Refer guide for more information 
+
+For Authorize/Purchase with Void/Capture/Refund use [PostTokenisedCrediCard/payeezyclientsample](https://github.com/payeezy/payeezy_android/tree/master/example/PostTokenisedCrediCard/payeezyclientsample)
+ 
+For all transactions use [AllTranasctions](https://github.com/payeezy/payeezy_android/tree/master/example/AllTranasctions)
 
 Project dir structure:
 <div><img src="https://github.com/payeezy/payeezy_android/blob/master/guide/images/payeezy_android_sample_dir_structure.png" alt="sample app"/></div>
