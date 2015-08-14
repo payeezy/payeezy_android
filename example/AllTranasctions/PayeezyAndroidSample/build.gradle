@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
+apply plugin: 'com.android.application'
+
+dependencies {
+
+    compile files('libs/android-support-v4.jar')
+    compile files('libs/com.fasterxml.jackson.databind.jar')
+    compile files('libs/spring-android-rest-template-1.0.0.RELEASE.jar')
+    compile files('libs/jackson-mapper-asl-1.8.8.jar')
+    compile files('libs/jackson-core-asl-1.8.8.jar')
+    compile files('libs/jackson-annotations-2.5.1.jar')
+    compile files('libs/com.fasterxml.jackson.core.jar')
+    compile files('libs/jxl-2.6.12.jar')
+    compile files('libs/org.apache.httpclient.jar')
+    compile files('libs/spring-android-core-1.0.0.RELEASE.jar')
+    compile files('libs/org.apache.httpcomponents.httpcore_4.2.1.jar')
+    compile files('libs/com.fasterxml.jackson.jsonschema.jar')
+
+
+}
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22.0.1"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    packagingOptions{
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+
+
+
+
+
+}
