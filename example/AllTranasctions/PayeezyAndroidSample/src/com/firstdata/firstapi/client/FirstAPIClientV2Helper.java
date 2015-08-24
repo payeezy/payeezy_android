@@ -568,9 +568,9 @@ public class FirstAPIClientV2Helper {
 	    	}*/
 			if(trans.getPaymentMethod().toLowerCase() == "3DS")
 			{
-				Assert.notNull(trans.getThreeDomainSecureToken().getCard_number(),"3DS card number not present");
-				Assert.notNull(trans.getThreeDomainSecureToken().getCardholder_name(),"3DS card holder name not present");
-				Assert.notNull(trans.getThreeDomainSecureToken().getCavv(),"3DS cavv not present");
+			//	Assert.notNull(trans.getThreeDomainSecureToken().getCard_number(),"3DS card number not present");
+			//	Assert.notNull(trans.getThreeDomainSecureToken().getCardholder_name(),"3DS card holder name not present");
+			//	Assert.notNull(trans.getThreeDomainSecureToken().getCavv(),"3DS cavv not present");
 			}
 	        if(trans.getPaymentMethod().toLowerCase() == "valuelink")
 	    	{
@@ -599,7 +599,7 @@ public class FirstAPIClientV2Helper {
 
         
     	String payload=getJSONObject(trans);
-		System.out.println("payload="+payload);
+		System.out.println("payload****="+payload);
         HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
 	//	HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader("y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a", "a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6",payload));
 
@@ -614,16 +614,16 @@ public class FirstAPIClientV2Helper {
 	        if(resString.contains("FDToken"))
 	        {
 	        	uresponseStr.setResponseString(resString);
-	        //	UserTransactionResponse tres = GetTokenTransactionResponse(resString);
+	        //	UserTransactionResponse tres = GetTransactionResponse(resString);
 	        //	uresponseStr = tres;
 	        }
 	        else
 	        {
 		        //UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
-	        	uresponseStr = GetTransactionResponse(resString);
+	        	//uresponseStr = GetTransactionResponse(resString);
 		        uresponseStr.setResponseString(resString);
-		        TransactionResponse responseStr = uresponseStr;
-		        System.out.println(responseStr);
+		   //     TransactionResponse responseStr = uresponseStr;
+		    //    System.out.println(responseStr);
 	        }
 	        
 	        return uresponseStr;
@@ -669,7 +669,7 @@ public class FirstAPIClientV2Helper {
         Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
         String url=this.url+"/transactions/{id}";
         String payload=getJSONObject(trans);
-        
+        System.out.println("payload within secondary="+payload);
         HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
         //ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class,trans.getTransactionId());
         //ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,trans.getTransactionId());
@@ -677,8 +677,23 @@ public class FirstAPIClientV2Helper {
         ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,trans.getId());
         System.out.println(response.toString());
         String resString = response.toString();
-        UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
-        uresponseStr.setResponseString(resString);
+		UserTransactionResponse uresponseStr=  new UserTransactionResponse();
+		if(resString.contains("FDToken"))
+		{
+			uresponseStr.setResponseString(resString);
+			//	UserTransactionResponse tres = GetTransactionResponse(resString);
+			//	uresponseStr = tres;
+		}
+		else
+		{
+			//UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
+			uresponseStr = GetTransactionResponse(resString);
+			uresponseStr.setResponseString(resString);
+			TransactionResponse responseStr = uresponseStr;
+			System.out.println(responseStr);
+		}
+      //  UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
+    //    uresponseStr.setResponseString(resString);
         //TransactionResponse responseStr = (TransactionResponse)uresponseStr;
         //        return doTransaction(trans,credentials);
         //return response.getBody();

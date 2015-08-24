@@ -925,14 +925,15 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			TransactionRequest trans = getPrimaryTransaction();
 			Object responseObject = clientHelper.authorizeTransaction(trans);
 			System.out.println("Response : " + responseObject.toString());
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+			Object responseObject2 = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+			statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+			/*if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
-			}
+			}*/
 			
 		}catch(Exception e)
 		{
@@ -1121,15 +1122,20 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			clientHelper.setUrl(TransactionDataProvider.urlCert);
 			TransactionRequest trans = getPrimaryTransaction();
 			Object responseObject = clientHelper.purchaseTransaction(trans);
-			System.out.println("Response : " + responseObject.toString());
+		//	TransactionResponse transactionResponse= clientHelper.purchaseTransaction(trans);
+		//	System.out.println("Response : " + responseObject.toString());
 			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
 			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+
+			//statusString = statusString + responseObject.toString()+ splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
-			}
+			}*/
 			
 		}catch(Exception e)
 		{
@@ -1280,21 +1286,22 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			trans.setTransactionTag(transaction_tid);
 			//trans.setTransactionId(transaction_id);
 			trans.setId(transaction_id);
-			TransactionResponse responseObject = clientHelper.captureTransaction(trans);
+			Object responseObject2 = clientHelper.captureTransaction(trans);
 			//Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			//String responseString = responseObject.toString();
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
 			//statusString = uresp.getResponseString(); 
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
 			
-			
+		*/
+			statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -1530,20 +1537,22 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			trans.setTransactionTag(transaction_tid);
 			//trans.setTransactionId(transaction_id);
 			trans.setId(transaction_id);
-			TransactionResponse responseObject = clientHelper.refundTransaction(trans);
+			Object responseObject2 = clientHelper.refundTransaction(trans);
 			//Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			//String responseString = responseObject.toString();
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
 			//statusString = uresp.getResponseString(); 
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+			statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
-			
+		*/
 			
 		}catch(Exception e)
 		{
@@ -1780,20 +1789,22 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			trans.setTransactionTag(transaction_tid);
 			//trans.setTransactionId(transaction_id);
 			trans.setId(transaction_id);
-			TransactionResponse responseObject = clientHelper.voidTransaction(trans);
+			Object responseObject2  = clientHelper.voidTransaction(trans);
 			//Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			//String responseString = responseObject.toString();
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			//statusString = uresp.getResponseString(); 
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+			//statusString = uresp.getResponseString();
+			statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+
+			//statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
-			
+		*/
 			
 		}catch(Exception e)
 		{
@@ -2699,17 +2710,18 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			category = TransactionCategory.CATEGORY_AVS;
 			TransactionRequest trans = getPrimaryTransactionForTransType();
 			Object responseObject = clientHelper.authorizeTransaction(trans);
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
-			
+		*/
+			statusString = statusString + ((UserTransactionResponse)responseObject).getResponseString() + splitter;
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -3018,17 +3030,17 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			category = TransactionCategory.CATEGORY_LEVEL2;
 			TransactionRequest trans = getPrimaryTransactionForTransType();
 			Object responseObject = clientHelper.authorizeTransaction(trans);
-			System.out.println("Response : " + responseObject.toString());
+			//System.out.println("Response : " + responseObject.toString());
 			//String responseString = responseObject.toString();
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
-			}
-			
+			}*/
+			statusString = statusString + ((UserTransactionResponse)responseObject).getResponseString() + splitter;
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -3338,17 +3350,18 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			TransactionRequest trans = getPrimaryTransactionForTransType();
 			
 			Object responseObject = clientHelper.authorizeTransaction(trans);
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
-			
+		*/
+			statusString = statusString + ((UserTransactionResponse)responseObject).getResponseString() + splitter;
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -4008,16 +4021,17 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			category = TransactionCategory.CATEGORY_SOFTDESCRIPTORS;
 			TransactionRequest trans = getPrimaryTransactionForTransType();
 			Object responseObject = clientHelper.authorizeTransaction(trans);
-			System.out.println("Response : " + responseObject.toString());
+		///	System.out.println("Response : " + responseObject.toString());
 			
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+			statusString = statusString + ((UserTransactionResponse)responseObject).getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
-			}
+			}*/
 			
 		}catch(Exception e)
 		{
@@ -4570,35 +4584,39 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			TransactionRequest trans = getPrimaryTransactionForTransType();
 			
 			Object responseObject = clientHelper.authorizeTransaction(trans);
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			String resString = uresp.getResponseString();
-			int startIndex = resString.indexOf("transaction_tag");
-			startIndex = resString.indexOf("=", startIndex+1);
-			int endIndex = resString.indexOf(",", startIndex);
-			String transaction_tid = resString.substring(startIndex, endIndex);  
-			transaction_tid = transaction_tid.replace(" ", "");
-			transaction_tid = transaction_tid.replace(":", "");
-			transaction_tid = transaction_tid.replace("=", "");
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	String resString = uresp.getResponseString();
+			int startIndex = ((UserTransactionResponse)responseObject).getResponseString().indexOf("transaction_tag");
+			startIndex = ((UserTransactionResponse)responseObject).getResponseString().indexOf("=", startIndex + 1);
+			int endIndex = ((UserTransactionResponse)responseObject).getResponseString().indexOf(",", startIndex);
+		//	String transaction_tid = ((UserTransactionResponse)responseObject).getResponseString().substring(startIndex, endIndex);
+		//	transaction_tid = transaction_tid.replace(" ", "");
+		//	transaction_tid = transaction_tid.replace(":", "");
+
+			String transaction_tag = ((UserTransactionResponse)responseObject).getResponseString().substring(startIndex, endIndex);
+			transaction_tag = transaction_tag.replace(" ", "");
+			transaction_tag = transaction_tag.replace(":", "");
+			transaction_tag = transaction_tag.replace("=", "");
 			
-			startIndex = resString.indexOf("transaction_id");
-			startIndex = resString.indexOf("=", startIndex+1);
-			endIndex = resString.indexOf(",", startIndex);
-			String transaction_id = resString.substring(startIndex, endIndex);  
+			startIndex = ((UserTransactionResponse)responseObject).getResponseString().indexOf("transaction_id");
+			startIndex = ((UserTransactionResponse)responseObject).getResponseString().indexOf("=", startIndex + 1);
+			endIndex = ((UserTransactionResponse)responseObject).getResponseString().indexOf(",", startIndex);
+			String transaction_id = ((UserTransactionResponse)responseObject).getResponseString().substring(startIndex, endIndex);
 			transaction_id = transaction_id.replace(" ", "");
 			transaction_id = transaction_id.replace(":", "");
 			transaction_id = transaction_id.replace("=", "");
+
+		//	statusString = statusString + uresp.getResponseString() + splitter;
 			
-			statusString = statusString + uresp.getResponseString() + splitter;
-			
-			if(resp.getTransactionStatus() == "approved")
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
-			
+		*/
 			String splitShipment = trans.getSplitShipment();
 			String[] ss = splitShipment.split("/");
 			int count = Integer.parseInt(ss[0]);
@@ -4611,7 +4629,7 @@ public class RequestTask extends AsyncTask<String, String, String>{
 				trans2.setSplitShipment(split);
 				//trans2.setTransactionId(transaction_id);
 				trans2.setTransactionId(null);
-				trans2.setTransactionTag(transaction_tid);
+				trans2.setTransactionTag(transaction_tag);
 				trans2.setId(transaction_id);
 				if(i==1)
 				{
@@ -4626,22 +4644,22 @@ public class RequestTask extends AsyncTask<String, String, String>{
 					trans2.setAmount("0109");
 				}
 				Object responseObject2 = clientHelper.SplitTransaction(trans2);
-				System.out.println("Response : " + responseObject2.toString());
+			//	System.out.println("Response : " + responseObject2.toString());
 				
-				UserTransactionResponse uresp2 = (UserTransactionResponse)(responseObject2);
-				TransactionResponse resp2 = uresp2; //uresp.getBody();
-				System.out.println(uresp2.getResponseMessage() );
-				statusString = statusString + uresp2.getResponseString() + splitter;
-				
-				String resString2 = uresp2.getResponseString();
+			//	UserTransactionResponse uresp2 = (UserTransactionResponse)(responseObject2);
+			//	TransactionResponse resp2 = uresp2; //uresp.getBody();
+			//	System.out.println(uresp2.getResponseMessage() );
+			//	statusString = statusString + uresp2.getResponseString() + splitter;
+				statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
+			//	String resString2 = uresp2.getResponseString();
 				//check if last of the split
-				if(resString2.toLowerCase().contains("split_shipment"))
+				if(((UserTransactionResponse)responseObject2).getResponseString().toLowerCase().contains("split_shipment"))
 				{
-					int start = resString2.indexOf("split_shipment");
-					start = resString2.indexOf("=", start+1);
-					int end = resString2.indexOf(",", start);
+					int start = ((UserTransactionResponse)responseObject2).getResponseString().indexOf("split_shipment");
+					start = ((UserTransactionResponse)responseObject2).getResponseString().indexOf("=", start + 1);
+					int end = ((UserTransactionResponse)responseObject2).getResponseString().indexOf(",", start);
 					System.out.println("start : " + Integer.toString(start) + "end : " + Integer.toString(end) );  
-					String splitShip = resString2.substring(start, end);  
+					String splitShip = ((UserTransactionResponse)responseObject2).getResponseString().substring(start, end);
 					splitShip = splitShip.replace(" ", "");
 					splitShip = splitShip.replace(":", "");
 					splitShip = splitShip.replace("=", "");
@@ -4650,10 +4668,11 @@ public class RequestTask extends AsyncTask<String, String, String>{
 					//int countComplete = Integer.parseInt(completedSplits[0]);
 					int totalComplete = Integer.parseInt(completedSplits[1]);
 
-					if(resp2.getTransactionStatus() == "approved")
+				/*	if(resp2.getTransactionStatus() == "approved")
 					{
 						System.out.println(uresp2.getTransactionStatus() );
 					}
+					*/
 					if(totalComplete >= i)
 					{
 						break;
@@ -5174,17 +5193,19 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			category = TransactionCategory.CATEGORY_3DS;
 			TransactionRequest trans = getPrimaryTransactionForTransType();
 			Object responseObject = clientHelper.authorizeTransaction(trans);
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			//String responseString = responseObject.toString();
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
-			
+		*/
+			statusString = statusString + ((UserTransactionResponse)responseObject).getResponseString() + splitter;
+
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -5476,21 +5497,22 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			transaction_id = transaction_id.replace("=", "");
 			
 			TransactionRequest trans = getPrimaryTransactionForSecondaryModified();
-			TransactionResponse responseObject = clientHelper.purchaseTransaction(trans);
+			Object responseObject2 = clientHelper.purchaseTransaction(trans);
 			//Toast.makeText(getApplicationContext(), response.toString(), Toast.LENGTH_SHORT).show();
-			System.out.println("Response : " + responseObject.toString());
+		//	System.out.println("Response : " + responseObject.toString());
 			//String responseString = responseObject.toString();
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
 			//statusString = uresp.getResponseString(); 
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
 			
-			
+		*/
+			statusString = statusString + ((UserTransactionResponse)responseObject2).getResponseString() + splitter;
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -6006,16 +6028,17 @@ public class RequestTask extends AsyncTask<String, String, String>{
 			TransactionRequest trans = getPrimaryTransaction();
 			Object responseObject = clientHelper.authorizeTransaction(trans);
 			
-			System.out.println("Response : " + responseObject.toString());
-			UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
-			TransactionResponse resp = uresp; //uresp.getBody();
-			System.out.println(uresp.getResponseMessage() );
-			statusString = statusString + uresp.getResponseString() + splitter;
-			if(resp.getTransactionStatus() == "approved")
+		//	System.out.println("Response : " + responseObject.toString());
+		//	UserTransactionResponse uresp = (UserTransactionResponse)(responseObject);
+		//	TransactionResponse resp = uresp; //uresp.getBody();
+		//	System.out.println(uresp.getResponseMessage() );
+		//	statusString = statusString + uresp.getResponseString() + splitter;
+		/*	if(resp.getTransactionStatus() == "approved")
 			{
 				System.out.println(uresp.getTransactionStatus() );
 			}
-			
+		*/
+			statusString = statusString + ((UserTransactionResponse)responseObject).getResponseString() + splitter;
 		}catch(Exception e)
 		{
 			//Toast.makeText(getApplicationContext(), " Exception :" + e.getMessage(), Toast.LENGTH_SHORT).show();

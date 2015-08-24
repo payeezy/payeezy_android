@@ -2,172 +2,88 @@
 <items version="2" >
 
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.jsonschema.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c638a90dd7a277029506df43ea6b894fa43da4e1">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-afc4b16b00827d067be50e9f0aee3283f230670a.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\android-support-v4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\android-support-v4-bcc98a1ee2bc11f2ba8b61a2d51461f5d8c444da.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-core-asl-1.8.8.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-d3fef171a8256f8c43e9ce361503cb938121c8a0.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.databind.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-857fb8d936d568a36dfa6f2a03d469a04e7b8200.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-mapper-asl-1.8.8.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="01bb32d9d2527c083a56e234acca49a48d3c65c8">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-470785f2b8eb71231002f5f4cd6a1e4e0549e6fb.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\spring-android-core-1.0.0.RELEASE.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="7ee66d6bd7af44b40fba9017dfd436e72f93d3ac">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-1b9de84497ebd5b92b8b702e6cd747e6c72f4c28.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\org.apache.httpcomponents.httpcore_4.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c41205ee4fa93ba46fdaf2d8bfa624b807c32392">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\org.apache.httpcomponents.httpcore_4.2.1-270d9530e9206fdd76edf52515e8e35c45bbde77.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\org.apache.httpclient.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="10a45d03873baa34436ae54548d9f1140d4bb68a">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\org.apache.httpclient-ca9ec0c5a192979fbf097ea557372b5d271202b0.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-core-asl-1.8.8.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-b75a0e3bfcd96394416801ae49c791657816cbcc.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-annotations-2.5.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="71c1992c0cf5e0ce62574e96009572062ba0f4d9">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-ecb42c1f72050cac32ad0c27e927a7685f677d96.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.core.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-327863404c981a0c2b112724285ddfea7ee82af6.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.core.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-f66a6e937badb9fe89a4d8e70744b822ad8c8e4f.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jxl-2.6.12.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jxl-2.6.12.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jxl-2.6.12-9e4d014999c54faa931a9bc2679809ea20c8cdb9.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jxl-2.6.12-fef1904c53006b70c6e2ed4895cc7a465191f260.jar" />
     </item>
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\org.apache.httpcomponents.httpcore_4.2.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c41205ee4fa93ba46fdaf2d8bfa624b807c32392">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\org.apache.httpcomponents.httpcore_4.2.1-05693f4d5b2e9b34340c922f6257f77c8dcf1f24.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\android-support-v4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\android-support-v4-17ac8c25a20e626878693694200be3dbddb5b980.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-annotations-2.5.1.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="71c1992c0cf5e0ce62574e96009572062ba0f4d9">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-d963bf520de1e429768f5e1d5d94fc03179809b1.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-7e84f2b0ebb44d497b7dd32344a08f014d14f091.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-cd1cdf88452789054d95378be80fb73a3d0b7d71.jar" />
-    </item>
-    <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.databind.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-7d2fcfdd06add006542d88a4f87096d58bcfffd4.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\org.apache.httpclient.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\org.apache.httpclient.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="10a45d03873baa34436ae54548d9f1140d4bb68a">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\org.apache.httpclient-03b74a1dbc6b7a4c5ca9cbcd29056e6682094d8f.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\org.apache.httpclient-6667e3812be481fb8a8a771d8178dbeeb03ed3ed.jar" />
     </item>
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jxl-2.6.12.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jxl-2.6.12-6048934a053318a8877866bc2ec30b6400803ad9.jar" />
+        sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-4a78cc54d09c7e6e0b8021c6f39382b39d571d33.jar" />
     </item>
     <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\spring-android-core-1.0.0.RELEASE.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.databind.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-159dd5b50183d13c43c56b9be9ee068e6561deff.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\org.apache.httpcomponents.httpcore_4.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c41205ee4fa93ba46fdaf2d8bfa624b807c32392">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\org.apache.httpcomponents.httpcore_4.2.1-705d8632e173f254a82caa8d613a9d78eea2f346.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\spring-android-core-1.0.0.RELEASE.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="7ee66d6bd7af44b40fba9017dfd436e72f93d3ac">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-81a2419f38bbb3c9fbac304733fa50719c123c46.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-9d9748236b9659bca50a41a1b9768247db1778c7.jar" />
     </item>
     <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-mapper-asl-1.8.8.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-mapper-asl-1.8.8.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="01bb32d9d2527c083a56e234acca49a48d3c65c8">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-905d7a9265169b46a0e732764ba425c1f436ecbc.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-9f92cc8fd538a2625df4eb2828eda4b37a2f02db.jar" />
     </item>
     <item
-        jar="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.jsonschema.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-core-asl-1.8.8.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-715c48bedd55e8ce72554077e1a09fbf97eaf54e.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\jackson-annotations-2.5.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="71c1992c0cf5e0ce62574e96009572062ba0f4d9">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-d80dab038adca85b1155f439fd2707b162edcc0a.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\android-support-v4-a496eb52cd08aeef1a3dc116d23ee960643ffae4.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.jsonschema.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="c638a90dd7a277029506df43ea6b894fa43da4e1">
-        <dex dex="E:\payeezyandroidprevver\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-a4050f3c4ed0d56852a6a885393616eccd3196b6.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-5a523c54868caf0492fa9b200e93e41a47548dc7.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\libs\com.fasterxml.jackson.core.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\AllTranasctions\PayeezyAndroidSample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-8b3bee216e9f21fc858f128259bf031077dae4e0.jar" />
     </item>
 
 </items>

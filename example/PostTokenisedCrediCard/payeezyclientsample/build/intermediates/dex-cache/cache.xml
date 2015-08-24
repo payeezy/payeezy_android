@@ -2,81 +2,81 @@
 <items version="2" >
 
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\spring-android-core-1.0.0.RELEASE.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="7ee66d6bd7af44b40fba9017dfd436e72f93d3ac">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-c0cf33fc53f8459b411f1c87611f1328b1f99d61.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jxl-2.6.12.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jxl-2.6.12-3c6900152dc6c8081326e104e6d03a4d786a86f0.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\com.fasterxml.jackson.databind.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-95fd1b7d4e9059fd56bbde671a9e3421408d9961.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\org.apache.httpclient.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\org.apache.httpclient.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="10a45d03873baa34436ae54548d9f1140d4bb68a">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\org.apache.httpclient-881162956e287cf1c8208a46847141530115f9ab.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\org.apache.httpclient-e06f18285267d6cded400ada20853727dc3196de.jar" />
     </item>
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\android-support-v4.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\android-support-v4-49a409b3d25036bd48fdac346803df5573cce154.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jackson-core-asl-1.8.8.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-bbdb2abf3a7ea7f970cb7ee5fc4c89d11baac054.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jackson-annotations-2.5.1.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="71c1992c0cf5e0ce62574e96009572062ba0f4d9">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-44352d663e978941ecd6b9622fabf81a46035c98.jar" />
-    </item>
-    <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\com.fasterxml.jackson.jsonschema.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\com.fasterxml.jackson.jsonschema.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="c638a90dd7a277029506df43ea6b894fa43da4e1">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-6da540aefcae7b455965dc0bcd347222c552f873.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-87702fe9497ed60cd20cc141e4836e812f695b58.jar" />
     </item>
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\com.fasterxml.jackson.core.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\spring-android-core-1.0.0.RELEASE.jar"
         jumboMode="false"
         revision="22.0.0"
-        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-d69ecbc4ab15112a833fafb12d213ed346e11061.jar" />
+        sha1="7ee66d6bd7af44b40fba9017dfd436e72f93d3ac">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-6ef64f1ecd305874e5422327bad8ccd1748a1088.jar" />
     </item>
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jackson-mapper-asl-1.8.8.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\com.fasterxml.jackson.databind.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-355eb25362b929600b6c2375aee089eb2ff1fea0.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jxl-2.6.12.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jxl-2.6.12-4eedcbfa5ef73a10b5ce8771ae05a5b0355daad3.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jackson-core-asl-1.8.8.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-614594f51aa77e6f755c00047af618e208a7275e.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\android-support-v4-cc32aba01e9541b3173bc257e54cc07e5d1ca0bc.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jackson-annotations-2.5.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="71c1992c0cf5e0ce62574e96009572062ba0f4d9">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-ded2ad75e6b19a9c74a104fac35913ec8b9a391a.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\jackson-mapper-asl-1.8.8.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="01bb32d9d2527c083a56e234acca49a48d3c65c8">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-db19c1208569d1d452efa9034a75579bc36459d7.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-197653bb0cc840015b2c9d2cc5c6900fb7a496de.jar" />
     </item>
     <item
-        jar="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\com.fasterxml.jackson.core.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-e223c1c7090f0817ea6c13cf44393a5311cabbef.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
-        <dex dex="E:\clonedpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-fbc7f5069b4ce3ac938fc69a05ab6d842e95e5f5.jar" />
+        <dex dex="C:\Users\f53pwz7\cloneversionpayeezyandroid\payeezy_android\example\PostTokenisedCrediCard\payeezyclientsample\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-10589e76daaf967c35da046590b4e5e216d871e2.jar" />
     </item>
 
 </items>
