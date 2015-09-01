@@ -39,7 +39,7 @@ Using below listed steps, you can easily integrate your mobile/web payment appli
 
 For more information on getting started, visit  [get_start_with_payeezy guide] (https://github.com/payeezy/get_started_with_payeezy/blob/master/get_started_with_payeezy042015.pdf) or [download](https://github.com/payeezy/get_started_with_payeezy/raw/master/get_started_with_payeezy042015.pdf)
 
-#How to Securing APIKey etc ??
+#How to Secure APIKey/token etc??
 Securing APIKey, token constant values in Android app : http://stackoverflow.com/questions/14570989/best-practice-for-storing-private-api-keys-in-android
 
 # Testing - Payeezy {SANDBOX region}
