@@ -4,7 +4,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.payeezyclient.NavMainActivity" >
+    tools:context="com.example.payeezytokenised.NavMainActivity" >
 
     <!--
          As the main content view, the view below consumes the entire
@@ -30,11 +30,11 @@
 
     <fragment
         android:id="@+id/navigation_drawer"
-        android:name="com.example.payeezyclient.NavigationDrawerFragment"
+        android:name="com.example.payeezytokenised.NavigationDrawerFragment"
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         tools:layout="@layout/fragment_navigation_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
-<!-- From: file:/C:/Users/f53pwz7/cloneversionpayeezyandroid/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/layout/activity_nav_main.xml -->
+<!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/layout/activity_nav_main.xml -->

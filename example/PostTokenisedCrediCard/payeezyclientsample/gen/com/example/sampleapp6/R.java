@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.payeezyclient;
+package com.example.payeezytokenised;
 
 public final class R {
     public static final class attr {

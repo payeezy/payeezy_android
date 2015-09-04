@@ -369,7 +369,7 @@ ADDED from AndroidManifest.xml:175:5
 		ADDED from AndroidManifest.xml:177:9
 	android:theme
 		ADDED from AndroidManifest.xml:180:6
-activity#com.example.payeezyclient.MainActivity
+activity#com.example.payeezytokenised.MainActivity
 ADDED from AndroidManifest.xml:183:5
 	android:label
 		ADDED from AndroidManifest.xml:185:9
@@ -385,7 +385,7 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:189:13
 	android:name
 		ADDED from AndroidManifest.xml:189:23
-activity#com.example.payeezyclient.NavMainActivity
+activity#com.example.payeezytokenised.NavMainActivity
 ADDED from AndroidManifest.xml:192:5
 	android:label
 		ADDED from AndroidManifest.xml:194:9

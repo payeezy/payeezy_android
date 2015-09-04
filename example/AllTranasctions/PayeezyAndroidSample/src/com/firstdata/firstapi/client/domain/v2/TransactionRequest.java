@@ -7,7 +7,6 @@ import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-import com.example.payeezyclient.PZToken;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -63,14 +62,14 @@ public class TransactionRequest {
 	private Token token;
 	
 	//@JsonProperty("trtoken")
-	private PZToken pztoken;
+	/*private PZToken pztoken;
 	
 	public PZToken getPztoken() {
 		return pztoken;
 	}
 	public void setPztoken(PZToken pztoken) {
 		this.pztoken = pztoken;
-	}
+	}*/
 
 	@JsonProperty("split_tender_id)")
 	private String split_tender_id;

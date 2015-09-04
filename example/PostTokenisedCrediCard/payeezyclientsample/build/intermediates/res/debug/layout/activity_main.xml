@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.payeezyclient.MainActivity" >
+    tools:context="com.example.payeezytokenised.MainActivity" >
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -353,4 +353,4 @@ android:text="@string/hello_world" />
 -->
 
     
-</RelativeLayout><!-- From: file:/C:/Users/f53pwz7/cloneversionpayeezyandroid/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/layout/activity_main.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/example/PostTokenisedCrediCard/payeezyclientsample/res/layout/activity_main.xml -->

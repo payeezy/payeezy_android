@@ -1729,5 +1729,130 @@ public class FirstAPIClientV2Helper {
 	      
 	  }
 
+//Added for German Direct Debit
+private TransactionResponse doPurchaseVoidAVSGD(TransactionRequest trans) throws Exception{
+
+	//String url=https://api-qa.payeezy.com/v1/transactions;
+	//String url=this.url+"/transactions";
+	//if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
+    	/*
+    	//if( (trans.getToken() != null) && (trans.getToken().getToken_type() != null) && (trans.getToken().getToken_type().toUpperCase() == "FDTOKEN") )
+        //{
+	    //       	url=this.url+"/transactions/tokens";
+        //}
+        */
+	//url=this.url+"/transactions/tokens";
+
+	/*if((trans.getTransactionType() == null) || (trans.getTransactionType() == "" ))
+	{
+		//url=this.url+"/transactions/tokens";
+		url="https://api-cert.payeezy.com/v1"+"/transactions/tokens";
+	}
+	else
+	{
+		if((trans.getPaymentMethod().toLowerCase() != "valuelink") && (trans.getPaymentMethod().toLowerCase() != "token")  && (trans.getPaymentMethod().toLowerCase() != "3ds"))
+		{
+			Assert.notNull(trans.getCard().getName(),"Card holder name is empty");
+
+			Assert.notNull(trans.getCard().getExpiryDt(),"Card Expiry date is not present");
+			Assert.notNull(trans.getCard().getNumber(),"Card number is not present");
+		}
+
+		if(trans.getPaymentMethod().toLowerCase() == "valuelink")
+		{
+			Assert.notNull(trans.getGiftcard().getCc_number(),"Value Link Card number is not present");
+		}
+		if( (trans.getTransactionType() != null) || (trans.getTransactionType() != "")  || (trans.getTransactionType().toLowerCase() != "deactivate"))
+		{
+			if(!(url.endsWith("tokens")))
+			{
+				//Assert.notNull(trans.getAmount(),"Amount is not present");
+			}
+		}
+		if(!(url.endsWith("tokens")))
+		{
+			//Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
+		}
+
+		if((trans.getEciindicator() == "5") && (trans.getTransactionType().toLowerCase().equalsIgnoreCase("void")))
+		{
+			trans.setBilling(null);
+			trans.setEciindicator(null);
+		}
+	}
+
+	//org.codehaus.jackson.map.ObjectMapper objectMapper = new org.codehaus.jackson.map.ObjectMapper();
+	//com.fasterxml.jackson.databind.ObjectMapper objectMapper = new com.fasterxml.jackson.databind.ObjectMapper();
+	//objectMapper.setconfigure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+	//objectMapper.configure( DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+	//String url=this.url+"/transactions";
+	//if( ( trans.getToken() == null) || ( trans.getType() == "FDToken") || ( trans.getToken().getTokenData().getValue() == "") || ( trans.getToken().getTokenData().getValue() == "NOIW"))
+	//{
+	//       	url=this.url+"/transactions/tokens";
+	//}
+	//if( ( trans.getToken() == null) && ( trans.getType() == "FDToken") && ( trans.getTa_token() == "NOIW") && ( trans.getAuth() == "false"))
+	//{
+	////url=this.url+"/securitytokens";
+	//	url=this.url+"/transactions/tokens";
+	//}
+
+
+	//if((trans.getTransactionType() == null) ||(trans.getTransactionType() == ""))
+	//{
+	//	url=this.url+"/transactions/tokens";
+	//}
+*/
+	String payload=getJSONObject(trans);
+	HttpEntity<TransactionRequest> request=new HttpEntity<TransactionRequest>(trans,getHttpHeader(this.appId, this.securedSecret,payload));
+	//ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class);
+	//UserTransactionResponse responseObject= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
+	//ResponseEntity<UserTransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, UserTransactionResponse.class);
+	//naked void
+	//String transId = trans.getTransactionId();
+	//  if(trans.getTransactionType().toLowerCase().equals( TransactionType.VOID.name().toLowerCase()))
+	//{
+	//	//naked void
+	//	trans.setTransactionId(null);
+	//	request.getBody().setTransactionId(null);
+	//}
+	//ResponseEntity<TransactionResponse[]> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse[].class);
+	//request.getHeaders().setUserAgent(System.getProperty("http.agent"));
+
+	//request.getHeaders().setUserAgent("Mozilla/5.0 ( compatible ) ");
+	System.out.println("url="+url);
+	System.out.println("request="+request);
+	ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class);
+	//if(trans.getTransactionType().toUpperCase() == TransactionType.PURCHASE.name().toUpperCase())
+	//{
+	//	return null;
+
+	//}
+	//else
+	//{
+	System.out.println(response.toString());
+	String resString = response.toString();
+
+	UserTransactionResponse uresponseStr =  new UserTransactionResponse();
+	/*	if(resString.contains("FDToken"))
+		{
+			uresponseStr.setResponseString(resString);
+			UserTransactionResponse tres = GetTokenTransactionResponse(resString);
+			uresponseStr = tres;
+		}
+		else
+		{*/
+	//UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
+
+//	uresponseStr = GetTransactionResponse(resString);
+	uresponseStr.setResponseString(resString);
+//	TransactionResponse responseStr = (TransactionResponse)uresponseStr;
+	System.out.println(resString);
+
+
+	return uresponseStr;
+	//}
+
+}
+
 }
 	

@@ -30,7 +30,15 @@ public class TransactionResponse implements Cloneable{
      * */
 	/*public TransactionResponse() {
 	}*/
-	
+
+
+	@JsonProperty("method")
+	public static String method;
+	@JsonProperty("amount")
+	public static String amount;
+	@JsonProperty("currency")
+	public static String currency;
+
 	@JsonProperty("transaction_status")
 	private String transactionStatus;
 	@JsonProperty("validation_status")
@@ -41,12 +49,7 @@ public class TransactionResponse implements Cloneable{
 	private String transactionId;
 	@JsonProperty("transaction_tag")
 	private String transactionTag;
-	@JsonProperty("method")
-	private String method;
-	@JsonProperty("amount")
-	private String amount;
-	@JsonProperty("currency")
-	private String currency;
+
 	@JsonProperty("avs")	
 	private String avs;
 	@JsonProperty("cvv2")
@@ -215,7 +218,7 @@ public class TransactionResponse implements Cloneable{
 	}
 	
 	
-	public String getMethod() {
+	public static String getMethod() {
 		return method;
 	}
 
@@ -226,7 +229,7 @@ public class TransactionResponse implements Cloneable{
 
 
 	
-	public String getAmount() {
+	public static String getAmount() {
 		return amount;
 	}
 
@@ -238,7 +241,7 @@ public class TransactionResponse implements Cloneable{
 
 
 	
-	public String getCurrency() {
+	public static String getCurrency() {
 		return currency;
 	}
 

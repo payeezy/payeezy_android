@@ -540,7 +540,7 @@ public class FirstAPIClientV2Helper {
     	return transResponse;
     }
     
-    private TransactionResponse doPrimaryTransaction(TransactionRequest trans) throws Exception{
+    public TransactionResponse doPrimaryTransaction(TransactionRequest trans) throws Exception{
     	
     	//String url=this.url+"/transactions";
 		String url="https://api-cert.payeezy.com/v1/transactions";
@@ -611,23 +611,30 @@ public class FirstAPIClientV2Helper {
 	        String resString = response.toString();
 
 	        UserTransactionResponse uresponseStr =  new UserTransactionResponse();
-	        if(resString.contains("FDToken"))
+		uresponseStr.setResponseString(resString);
+		return uresponseStr;
+		//trying
+
+	/*	Object o2 = response.getBody();
+		TransactionResponse resp = GetTransactionResponse(o2.toString());
+
+		return resp;*/
+
+	//	end trying
+	 /*       if(resString.contains("FDToken"))
 	        {
 	        	uresponseStr.setResponseString(resString);
-	        //	UserTransactionResponse tres = GetTransactionResponse(resString);
-	        //	uresponseStr = tres;
+
 	        }
 	        else
 	        {
-		        //UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
-	        	//uresponseStr = GetTransactionResponse(resString);
+
 		        uresponseStr.setResponseString(resString);
-		   //     TransactionResponse responseStr = uresponseStr;
-		    //    System.out.println(responseStr);
+
 	        }
-	        
-	        return uresponseStr;
-        //}
+	   */
+	     //   return uresponseStr;
+
             
     }
     
@@ -662,7 +669,7 @@ public class FirstAPIClientV2Helper {
     
     }
     
-    private TransactionResponse doSecondaryTransaction(TransactionRequest trans) throws Exception 
+    public TransactionResponse doSecondaryTransaction(TransactionRequest trans) throws Exception
     {
         Assert.notNull(trans.getTransactionTag(),"Transaction Tag is not present");
         Assert.notNull(trans.getId(),"Id is not present"); 
@@ -784,7 +791,7 @@ public class FirstAPIClientV2Helper {
     }
     */
     
-    public TransactionResponse purchaseTransaction(TransactionRequest trans) throws Exception{
+    /*public TransactionResponse purchaseTransaction(TransactionRequest trans) throws Exception{
         trans.setTransactionType(TransactionType.PURCHASE.name().toLowerCase());
         return doPrimaryTransaction(trans);
     }
@@ -792,7 +799,7 @@ public class FirstAPIClientV2Helper {
     public TransactionResponse authorizeTransaction(TransactionRequest trans) throws Exception{
         trans.setTransactionType(TransactionType.AUTHORIZE.name().toLowerCase());
         return doPrimaryTransaction(trans);
-    }
+    }*/
     public TransactionResponse captureTransaction(TransactionRequest trans)throws Exception{
         trans.setTransactionType(TransactionType.CAPTURE.name().toLowerCase());
         return doSecondaryTransaction(trans);
@@ -1278,6 +1285,8 @@ public class FirstAPIClientV2Helper {
 	      return r;
 	      
 	  }
+
+
 
 }
 	
