@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\com.fasterxml.jackson.jsonschema.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c638a90dd7a277029506df43ea6b894fa43da4e1">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-3d4f50bd1fae68c1be2211ea4b55bbcb54ec2355.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\com.fasterxml.jackson.databind.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-01f308d07ef7c0776507fe34455b1ea569b0cbcc.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-5b220c50cffb634f8173f06b062ff515bb87b56d.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\android-support-v4-f407ca6be8d4ee4df3f18cfde6ef873224bbb1f5.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\jackson-annotations-2.5.1.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="71c1992c0cf5e0ce62574e96009572062ba0f4d9">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-aa10251a140f1c8a843c680343c82aab798a4475.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\org.apache.httpclient.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="10a45d03873baa34436ae54548d9f1140d4bb68a">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\org.apache.httpclient-2697084451e3543ea4ef8ef87c408c3762149d4b.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\spring-android-core-1.0.0.RELEASE.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7ee66d6bd7af44b40fba9017dfd436e72f93d3ac">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-7d715bd54210c8f5d5f462104aab790194fc9ef4.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\jackson-core-asl-1.8.8.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-f74157ab41c3cb342867f19026fbb4f7a1920655.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\jxl-2.6.12.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\jxl-2.6.12-89234fb6400143e800ddf126e8df6094ac2740bf.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\com.fasterxml.jackson.core.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-4f9e05e582b978ab2edc0b6d705ffe0edd8e4090.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\libs\jackson-mapper-asl-1.8.8.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="01bb32d9d2527c083a56e234acca49a48d3c65c8">
+        <dex dex="C:\Users\f53pwz7\payeezygermandirectdebit\Example\GermanDirectDebit\payeezyclientsample\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-753f0eb6602eb200fa6c87656073c4a08f7bdad8.jar" />
+    </item>
+
+</items>
