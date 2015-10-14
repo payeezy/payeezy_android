@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/TokenisedTransactions/payeezyclientsample/res/values/values.xml -->
+    <eat-comment/>
+    <color name="backg">#ffcccccc</color>
+    <color name="vassoio">#ffffffff</color>
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/TokenisedTransactions/payeezyclientsample/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="navigation_drawer_width">240dp</dimen>
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/TokenisedTransactions/payeezyclientsample/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">payeezy tokenised</string>
+    <string name="authorize">Authorize</string>
+    <string name="avs">AVS</string>
+    <string name="btn_3ds">3DS</string>
+    <string name="btn_avs">AVS</string>
+    <string name="btn_level2">Level2</string>
+    <string name="btn_level3">Level3</string>
+    <string name="btn_recurring">Recurring</string>
+    <string name="btn_softdescriptors">Soft Descriptors</string>
+    <string name="btn_split">Split Shipments</string>
+    <string name="btn_transarmor">Transarmor</string>
+    <string name="btn_zerodollar">Zero Dollar</string>
+    <string name="button1">button1</string>
+    <string name="button2">button2</string>
+    <string name="capture">Capture</string>
+    <string name="getauthcapturetoken">AuthCapture</string>
+    <string name="getauthorisetoken">Authorise</string>
+    <string name="getauthvoidtoken">AuthVoid</string>
+    <string name="getgettoken">Token Generation-GET</string>
+    <string name="getpurchaserefundtoken">PurchaseRefund</string>
+    <string name="getpurchasetoken">Purchase</string>
+    <string name="hello_world">Response to be displayed</string>
+    <string name="level2">Level2</string>
+    <string name="level3">Level3</string>
+    <string name="login">Login</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="postgettoken">GetToken</string>
+    <string name="posttoken">Token Generation-POST</string>
+    <string name="purchase">Purchase</string>
+    <string name="rc">rc</string>
+    <string name="recurring">Recurring</string>
+    <string name="refund">Refund</string>
+    <string name="rm">rm</string>
+    <string name="softdescriptors">SoftDescriptors</string>
+    <string name="splitshipments">SplitShipments</string>
+    <string name="telecheck">Telecheck</string>
+    <string name="threeds">3DS</string>
+    <string name="title_activity_nav_main">NavMainActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="transarmor">Transarmor</string>
+    <string name="valuelink">ValueLink</string>
+    <string name="voidpayment">Void Payment</string>
+    <string name="zerodollar">ZeroDollar</string>
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/TokenisedTransactions/payeezyclientsample/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

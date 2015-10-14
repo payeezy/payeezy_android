@@ -1,0 +1,99 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.2.3'
+    }
+}
+apply plugin: 'com.android.application'
+
+
+//configurations.compile {
+  //  exclude module: 'spring-beans'
+
+//}
+
+
+
+dependencies {
+    //compile 'com.android.support:support-v4:18.0.+'
+    compile files('libs/android-support-v4.jar')
+     compile files('libs/com.fasterxml.jackson.databind.jar')
+    // compile files('libs/org.apache.commons.codec.jar')
+     compile files('libs/spring-android-rest-template-1.0.0.RELEASE.jar')
+     compile files('libs/jackson-mapper-asl-1.8.8.jar')
+    // compile files('libs/android-support-v7-appcompat.jar')
+    /// compile files('libs/org.restlet.jar')
+     compile files('libs/jackson-core-asl-1.8.8.jar')
+    //   apply plugin: 'java'
+    //apply plugin: 'idea'
+    // compile files('libs/spring-aop-4.1.+.RELEASE.jar')
+             //{exclude module:'springbeans'}
+    compile files('libs/jackson-annotations-2.5.1.jar')
+    compile files('libs/com.fasterxml.jackson.core.jar')
+    //compile files('libs/org.apache.httpcore.jar')
+    compile files('libs/jxl-2.6.12.jar')
+    compile files('libs/org.apache.httpclient.jar')
+    compile files('libs/spring-android-core-1.0.0.RELEASE.jar')
+    //configurations {
+      //  all*.exclude group: 'org.springframework', module: 'spring-beans'
+   // }
+  // configurations
+    //       {exclude 'springbeans'}
+     compile files('libs/com.fasterxml.jackson.jsonschema.jar')
+    // compile files('libs/org.jsslutils.jar')
+    // compile files('libs/android-support-multidex.jar')
+ //    compile files('libs/spring-beans-3.0.2.RELEASE.jar')
+    // compile files('libs/org.apache.httpmime.jar')
+
+
+
+   // compile fileTree(dir: 'libs', include: '*.jar')
+
+}
+android {
+    compileSdkVersion 21
+    buildToolsVersion "22"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    defaultConfig {
+        applicationId "com.sample.dccUS"
+
+    }
+    packagingOptions{
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+       // instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+}
