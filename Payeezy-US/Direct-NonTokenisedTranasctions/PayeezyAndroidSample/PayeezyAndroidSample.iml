@@ -83,13 +83,13 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="android-support-v4" level="project" />
     <orderEntry type="library" exported="" name="jackson-annotations-2.5.1" level="project" />
     <orderEntry type="library" exported="" name="org.apache.httpcomponents.httpcore_4.2.1" level="project" />
+    <orderEntry type="library" exported="" name="android-support-v4" level="project" />
     <orderEntry type="library" exported="" name="com.fasterxml.jackson.core" level="project" />
     <orderEntry type="library" exported="" name="com.fasterxml.jackson.databind" level="project" />
-    <orderEntry type="library" exported="" name="jxl-2.6.12" level="project" />
     <orderEntry type="library" exported="" name="org.apache.httpclient" level="project" />
+    <orderEntry type="library" exported="" name="jxl-2.6.12" level="project" />
     <orderEntry type="library" exported="" name="spring-android-core-1.0.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="com.fasterxml.jackson.jsonschema" level="project" />
     <orderEntry type="library" exported="" name="spring-android-rest-template-1.0.0.RELEASE" level="project" />
