@@ -1,9 +1,10 @@
-# Payeezy Android SDK
+﻿# Payeezy Android SDK
 
 Quickly integrate Payeezy from First Data into your Android application.
 
 If you want to enable secure and convenient payments in your Android app this guide will get you up and running within minutes. The Payeezy Service from First Data was created to simplify your integration with Android. Payeezy handles all the heavy lifting of the complex cryptography that protects your customers’ transactions. It also makes it super simple to create a developer test account and even apply for a merchant account all through our developer portal.
 
+* To download and set up Android Studio , the official Android IDE, please refer to http://developer.android.com/sdk/index.html
 # Minimum technical requirements
 *	The Payeezy android mobile SDK requires android OS 4.0 ice cream sandwich or higher (API level 14 or higher).
 *	A physical device or an emulator to use for developing and testing because Google Play services can only be installed on an emulator with an AVD that runs Google APIs platform based on Android 4.0 or higher.
@@ -20,7 +21,7 @@ Please refer to prerequisites document for
 *	API Key, secret and merchant token generation for sandbox/test region
 *	Download SDK from GitHub
 
-# TokenBased Transactions (NEW) - 
+# TokenBased Transactions - 
 *	Generate Token with ta_token - auth false - GET API
 *	Generate Token with ta_token - auth true - GET API
 *	Generate Token without  ta_token & auth -  - GET API with 0$ Auth
@@ -59,14 +60,14 @@ We're always happy to help with code or other questions you might have! Check ou
 5. Create a new Pull Request  
 
 ## Feedback
-Payeezy IOS SDK is in active development. We appreciate the time you take to try it out and welcome your feedback!
+Payeezy Android SDK is in active development. We appreciate the time you take to try it out and welcome your feedback!
 Here are a few ways to get in touch:
 * [GitHub Issues](https://github.com/payeezy/payeezy/issues) - For generally applicable issues and feedback
 * support@payeezy.com - for personal support at any phase of integration
 * [1.855.799.0790](tel:+18557990790)  - for personal support in real time 
 
 ## Terms of Use
-Terms and conditions for using Payeezy IOS SDK: Please see [Payeezy Terms & conditions](https://developer.payeezy.com/terms-use)
+Terms and conditions for using Payeezy Android SDK: Please see [Payeezy Terms & conditions](https://developer.payeezy.com/terms-use)
  
 ### License
-The Payeezy IOS SDK is open source and available under the MIT license. See the LICENSE file for more info.
+The Payeezy Android SDK is open source and available under the MIT license. See the LICENSE file for more info.
