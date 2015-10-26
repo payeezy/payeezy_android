@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.payeezytokenised"
+    package="com.sample.payeezytokenised"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -181,7 +181,7 @@
         <!-- android:debuggable="true" -->
 
         <activity
-            android:name="com.example.payeezytokenised.MainActivity"
+            android:name="com.sample.payeezytokenised.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -190,7 +190,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.payeezytokenised.NavMainActivity"
+            android:name="com.sample.payeezytokenised.NavMainActivity"
             android:label="@string/title_activity_nav_main" >
         </activity>
     </application>

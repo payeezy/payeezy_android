@@ -1,4 +1,4 @@
-package com.firstdata.firstapi.client;
+/*package com.firstdata.firstapi.client;
 
 import javax.net.ssl.HttpsURLConnection;
 import org.apache.http.client.HttpClient;
@@ -90,3 +90,4 @@ public class SystemSSLDefaultHttpClient  {
     
     
 }
+*/
