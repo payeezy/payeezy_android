@@ -619,8 +619,9 @@ public class FirstAPIClientV2Helper {
     
     public TransactionResponse doSecondaryTransaction(TransactionRequest trans) throws Exception
     {
-        Assert.notNull(trans.getTransactionTag(),"Transaction Tag is not present");
-        Assert.notNull(trans.getId(),"Id is not present"); 
+        Assert.notNull(trans.getTransactionTag(), "Transaction Tag is not present");
+
+        Assert.notNull(trans.getTransactionId(),"Id is not present");
         Assert.notNull(trans.getTransactionType(),"Transaction type is not present");
         String url=this.url+"/transactions/{id}";
         String payload=getJSONObject(trans);
@@ -629,24 +630,17 @@ public class FirstAPIClientV2Helper {
         //ResponseEntity<TransactionResponse> response= restTemplate.exchange(url, HttpMethod.POST, request, TransactionResponse.class,trans.getTransactionId());
         //ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,trans.getTransactionId());
         //request.getHeaders().setUserAgent(System.getProperty("http.agent"));
-        ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,trans.getId());
+        ResponseEntity<Object> response= restTemplate.exchange(url, HttpMethod.POST, request, Object.class,trans.getTransactionId());
         System.out.println(response.toString());
         String resString = response.toString();
 		UserTransactionResponse uresponseStr=  new UserTransactionResponse();
-		if(resString.contains("FDToken"))
-		{
+
+
 			uresponseStr.setResponseString(resString);
 			//	UserTransactionResponse tres = GetTransactionResponse(resString);
 			//	uresponseStr = tres;
-		}
-		else
-		{
-			//UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
-			uresponseStr = GetTransactionResponse(resString);
-			uresponseStr.setResponseString(resString);
-			TransactionResponse responseStr = uresponseStr;
-			System.out.println(responseStr);
-		}
+
+
       //  UserTransactionResponse uresponseStr = GetTransactionResponse(resString);
     //    uresponseStr.setResponseString(resString);
         //TransactionResponse responseStr = (TransactionResponse)uresponseStr;

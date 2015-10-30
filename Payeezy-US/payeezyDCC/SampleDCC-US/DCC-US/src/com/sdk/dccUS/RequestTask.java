@@ -440,11 +440,11 @@ System.out.println("I am in getPrimaryTransactionDCC");
 		rateReference.setRate_id(TransactionResponse.getRate_id());
 		rateReference.setDccaccepted(TransactionResponse.getDcc_offered());
 
-		if((uri[1]).equals ("card_rate"))
+		/*if((uri[1]).equals ("card_rate"))
 			rateReference.setType("dcc");
 		else
 		if((uri[1]).equals ("merchant_rate"))
-			rateReference.setType("dp");
+			rateReference.setType("dp");*/
 		request.setRateReference(rateReference);
 
 		return request;

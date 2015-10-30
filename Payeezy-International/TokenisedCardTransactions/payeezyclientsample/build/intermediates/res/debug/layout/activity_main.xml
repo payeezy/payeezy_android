@@ -23,13 +23,6 @@
                 android:orientation="vertical"
                 android:padding="5dp" >
 
-    <!--commented july 31st          <EditText
-                  android:id="@+id/txt_rmsg"
-                  android:layout_width="match_parent"
-                  android:layout_height="30dp"
-                  android:inputType="text"
-                  android:textAppearance="?android:attr/textAppearanceMedium"
-                  android:textColor="#ff000000" />-->
 
               <GridLayout
                   android:layout_width="wrap_content"

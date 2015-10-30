@@ -46,9 +46,11 @@ public class TransactionResponse implements Cloneable{
 	@JsonProperty("transaction_type")
 	private String transactionType;
 	@JsonProperty("transaction_id")
-	private String transactionId;
+	public static String transactionId;
+
+
 	@JsonProperty("transaction_tag")
-	private String transactionTag;
+	public static String transactionTag;
 
 	@JsonProperty("avs")	
 	private String avs;
@@ -196,7 +198,7 @@ public class TransactionResponse implements Cloneable{
 	}
 	
 	
-	public String getTransactionId() {
+	public static String getTransactionId() {
 		return transactionId;
 	}
 
@@ -205,11 +207,13 @@ public class TransactionResponse implements Cloneable{
 		this.transactionId = transactionId;
 	}
 
-
-	
-	public String getTransactionTag() {
+	public static String getTransactionTag() {
 		return transactionTag;
 	}
+	
+	/*public String getTransactionTag() {
+		return transactionTag;
+	}*/
 
 
 	

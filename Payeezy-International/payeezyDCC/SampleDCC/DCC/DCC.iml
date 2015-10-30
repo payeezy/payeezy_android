@@ -90,8 +90,8 @@
     <orderEntry type="library" exported="" name="jxl-2.6.12" level="project" />
     <orderEntry type="library" exported="" name="org.apache.httpclient" level="project" />
     <orderEntry type="library" exported="" name="spring-android-core-1.0.0.RELEASE" level="project" />
-    <orderEntry type="library" exported="" name="spring-android-rest-template-1.0.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="com.fasterxml.jackson.jsonschema" level="project" />
+    <orderEntry type="library" exported="" name="spring-android-rest-template-1.0.0.RELEASE" level="project" />
     <orderEntry type="library" exported="" name="jackson-mapper-asl-1.8.8" level="project" />
     <orderEntry type="library" exported="" name="jackson-core-asl-1.8.8" level="project" />
   </component>

@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.databind.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
-        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-086e0256cb1562d5850cfcfbd8b0ff8e4f4f86c5.jar" />
-    </item>
-    <item
         jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.core.jar"
         jumboMode="false"
         revision="22.0.0"
@@ -16,32 +9,39 @@
         <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-8c615e8b56d6cbaa39e60e63f990ef1ed89b9f51.jar" />
     </item>
     <item
-        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.jsonschema.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="c638a90dd7a277029506df43ea6b894fa43da4e1">
-        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-bacac2a97e1df48bfa268256c981b482a1237863.jar" />
-    </item>
-    <item
-        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\android-support-v4.jar"
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\android-support-v4.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
-        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\android-support-v4-572cad9522431aacde001b82ce85f3fdbd480f4c.jar" />
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\android-support-v4-0ef68ab1fa8bea2d0805b721ddca8fa0cbd9040c.jar" />
     </item>
     <item
-        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\jxl-2.6.12.jar"
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.core.jar"
         jumboMode="false"
         revision="22.0.0"
-        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
-        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jxl-2.6.12-53429ddaefa89dc7dfd3d86ce226e39d22742362.jar" />
+        sha1="c5cd3347c0a86d0dcfbf3da593d8431d5a789d54">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.core-462d979a3c16f63ebf623a4f64207ef03f9f372c.jar" />
     </item>
     <item
-        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\jackson-annotations-2.5.1.jar"
         jumboMode="false"
         revision="22.0.0"
-        sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
-        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-c566e3d6495b7e3f8ca4401820802dbb643ba80d.jar" />
+        sha1="71c1992c0cf5e0ce62574e96009572062ba0f4d9">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-9d28b691cba39f3fdf6791aff9aa1a4d3e2b7d1d.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\jackson-mapper-asl-1.8.8.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="01bb32d9d2527c083a56e234acca49a48d3c65c8">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-0918d0f1a29bac028705fd125aa39102eef84e69.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.databind.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-086e0256cb1562d5850cfcfbd8b0ff8e4f4f86c5.jar" />
     </item>
     <item
         jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\org.apache.httpclient.jar"
@@ -58,13 +58,6 @@
         <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jackson-mapper-asl-1.8.8-967da91f322bf86f16818aac2b197e8cea58762f.jar" />
     </item>
     <item
-        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\jackson-core-asl-1.8.8.jar"
-        jumboMode="false"
-        revision="22.0.0"
-        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
-        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-69b87c607b57a21f0063b150286cbcb2db7d610b.jar" />
-    </item>
-    <item
         jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\jackson-annotations-2.5.1.jar"
         jumboMode="false"
         revision="22.0.0"
@@ -72,11 +65,95 @@
         <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jackson-annotations-2.5.1-f123bd79a10019e2c6d0a4846d94492d2c39972b.jar" />
     </item>
     <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\jackson-core-asl-1.8.8.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-22ac0634081588d0fa314d82186fe9476eb87ce9.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-7693e6880fc9abfc6f1fa952295adce8c50d467f.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\spring-android-core-1.0.0.RELEASE.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7ee66d6bd7af44b40fba9017dfd436e72f93d3ac">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-17ed5cd605d74080ab19708919e25daeefdffec0.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.jsonschema.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c638a90dd7a277029506df43ea6b894fa43da4e1">
+        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-bacac2a97e1df48bfa268256c981b482a1237863.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="fde22d8d2ef6363324a3d79a1dd16c8645c25564">
+        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\android-support-v4-572cad9522431aacde001b82ce85f3fdbd480f4c.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.jsonschema.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="c638a90dd7a277029506df43ea6b894fa43da4e1">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.jsonschema-f8d870487db7ea51a05327436b1358a50d633555.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\jxl-2.6.12.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
+        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jxl-2.6.12-53429ddaefa89dc7dfd3d86ce226e39d22742362.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\com.fasterxml.jackson.databind.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="e2ff13c3de2f5a2ab2449a3dace2b0d1c37bd8ee">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\com.fasterxml.jackson.databind-83a9a19441fbd778bd6abae66c3a80c6eaeca04a.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\jackson-core-asl-1.8.8.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="dd2e90bb710ea3bc4610e24299d6a4c8dac5049b">
+        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jackson-core-asl-1.8.8-69b87c607b57a21f0063b150286cbcb2db7d610b.jar" />
+    </item>
+    <item
         jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\spring-android-core-1.0.0.RELEASE.jar"
         jumboMode="false"
         revision="22.0.0"
         sha1="7ee66d6bd7af44b40fba9017dfd436e72f93d3ac">
         <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\spring-android-core-1.0.0.RELEASE-ddf27b18e4bbeb3b018ac37622a731643c836855.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\jxl-2.6.12.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="7faf62e0697f7a88954622dfe8c8de33ed142ac7">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\jxl-2.6.12-eb77524862e8c3daa3ea870decd9a56aaadccd5b.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\libs\spring-android-rest-template-1.0.0.RELEASE.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="154e9b979594dc064eaa2c07ca1a045634537cf4">
+        <dex dex="C:\Users\f53pwz7\payeezyDCC-US\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\spring-android-rest-template-1.0.0.RELEASE-c566e3d6495b7e3f8ca4401820802dbb643ba80d.jar" />
+    </item>
+    <item
+        jar="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\libs\org.apache.httpclient.jar"
+        jumboMode="false"
+        revision="22.0.0"
+        sha1="10a45d03873baa34436ae54548d9f1140d4bb68a">
+        <dex dex="C:\Users\f53pwz7\clonedandroid0901\payeezy_android\Payeezy-US\payeezyDCC\SampleDCC-US\DCC-US\build\intermediates\pre-dexed\debug\org.apache.httpclient-398d2a84a98670e9ad6d2eb16c5a6b25b1f22703.jar" />
     </item>
 
 </items>

@@ -91,7 +91,7 @@ public class MainActivity extends Activity {
 	{
 		RequestTask rTask5 = new RequestTask(getApplicationContext());
 		String method="token";
-		String amount="1100";
+		String amount="1100.20";
 		String currency_code="GBP";
 
 		rTask5.execute("getauthorisetoken",method,amount,currency_code);

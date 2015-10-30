@@ -193,6 +193,7 @@ android:onClick="onLevel3"
 android:text="@string/level3"
 android:layout_column="1"
 android:layout_row="4"
+    android:enabled="false"
 />
 
 <Button
@@ -276,7 +277,7 @@ android:layout_row="7"
 
 android:id="@+id/textView1"
 android:layout_width="match_parent"
-android:layout_height="600dp"
+android:layout_height="1600dp"
 android:text="@string/hello_world"
 android:layout_column="0"
 android:layout_row="9"

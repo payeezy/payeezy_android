@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/f53pwz7/payeezyDCC/SampleDCC/DCC/res/values/values.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/payeezyDCC/SampleDCC/DCC/res/values/values.xml -->
     <eat-comment/>
     <color name="backg">#ffcccccc</color>
     <color name="vassoio">#ffffffff</color>
-    <!-- From: file:/C:/Users/f53pwz7/payeezyDCC/SampleDCC/DCC/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/payeezyDCC/SampleDCC/DCC/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="navigation_drawer_width">240dp</dimen>
-    <!-- From: file:/C:/Users/f53pwz7/payeezyDCC/SampleDCC/DCC/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/payeezyDCC/SampleDCC/DCC/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
@@ -86,7 +86,7 @@
     <string name="valuelink">ValueLink</string>
     <string name="voidpayment">Void Payment</string>
     <string name="zerodollar">ZeroDollar</string>
-    <!-- From: file:/C:/Users/f53pwz7/payeezyDCC/SampleDCC/DCC/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-International/payeezyDCC/SampleDCC/DCC/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

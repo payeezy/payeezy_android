@@ -749,7 +749,7 @@ String url="https://api-cert.payeezy.com/v1/transactions";
         trans.setTransactionType(TransactionType.AUTHORIZE.name().toLowerCase());
         return doPrimaryTransaction(trans);
     }*/
-    public TransactionResponse captureTransaction(TransactionRequest trans)throws Exception{
+    /*public TransactionResponse captureTransaction(TransactionRequest trans)throws Exception{
         trans.setTransactionType(TransactionType.CAPTURE.name().toLowerCase());
         return doSecondaryTransaction(trans);
     }
@@ -815,8 +815,8 @@ String url="https://api-cert.payeezy.com/v1/transactions";
         trans.setTransactionType(TransactionType.SPLIT.name());
         return doSecondaryTransaction(trans);
     }
-    
-    public TransactionResponse getTokenTransaction(TransactionRequest trans) throws Exception {
+    */
+  /*  public TransactionResponse getTokenTransaction(TransactionRequest trans) throws Exception {
         
         return doPrimaryTransaction(trans);
     }
@@ -850,7 +850,7 @@ String url="https://api-cert.payeezy.com/v1/transactions";
         return doPrimaryTransactionGet(trans);
     }
     
-    
+    */
     
     private UserTransactionResponse GetTokenTransactionResponse(String obj)
     {

@@ -37,9 +37,9 @@ public class TransactionRequest {
 	private String transactionTag;
 	
 	@JsonProperty("transaction_id")
-	private String transactionId;
+	private static String transactionId;
 	
-	public String getTransactionId() {
+	public static String getTransactionId() {
 		return transactionId;
 	}
 	public void setTransactionId(String transactionId) {
