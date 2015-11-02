@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">payeezy tokenised</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Response to be displayed</string>
     <string name="action_settings">Settings</string>
     <string name="button1">button1</string>
     <string name="button2">button2</string>

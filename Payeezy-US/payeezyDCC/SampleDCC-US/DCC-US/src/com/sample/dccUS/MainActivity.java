@@ -44,7 +44,8 @@ public void onDCCCVVPurchaseVoidCardRate(View view)
 
 	String	rate_type="card_rate";
 	//String		bin="438980";
-	String		bin="547132";
+	//String		bin="547132";
+	String		bin="510600";
 	String		ratetypeamount="100";
 
 
@@ -56,7 +57,8 @@ public void onDCCCVVPurchaseVoidCardRate(View view)
 	String		currency_code="USD";
 	String		credit_cardtype="visa";
 	String		cardholder_name="DCC Demo testing";
-	String			card_number="5471320000000001";
+	String			card_number="5106000000000002";
+	//String			card_number="5471320000000001";
 	String			exp_date="0416";
 	String			cvv="1234";
 

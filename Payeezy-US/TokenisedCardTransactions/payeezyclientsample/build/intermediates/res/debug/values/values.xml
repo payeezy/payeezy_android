@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/example/PostTokenisedCrediCard/payeezyclientsample/res/values/values.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/TokenisedCardTransactions/payeezyclientsample/res/values/values.xml -->
     <eat-comment/>
     <color name="backg">#ffcccccc</color>
     <color name="vassoio">#ffffffff</color>
-    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/example/PostTokenisedCrediCard/payeezyclientsample/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/TokenisedCardTransactions/payeezyclientsample/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="navigation_drawer_width">240dp</dimen>
-    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/example/PostTokenisedCrediCard/payeezyclientsample/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/TokenisedCardTransactions/payeezyclientsample/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
@@ -34,7 +34,7 @@
     <string name="getgettoken">Token Generation-GET</string>
     <string name="getpurchaserefundtoken">PurchaseRefund</string>
     <string name="getpurchasetoken">Purchase</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Response to be displayed</string>
     <string name="level2">Level2</string>
     <string name="level3">Level3</string>
     <string name="login">Login</string>
@@ -59,7 +59,7 @@
     <string name="valuelink">ValueLink</string>
     <string name="voidpayment">Void Payment</string>
     <string name="zerodollar">ZeroDollar</string>
-    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/example/PostTokenisedCrediCard/payeezyclientsample/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/f53pwz7/clonedandroid0901/payeezy_android/Payeezy-US/TokenisedCardTransactions/payeezyclientsample/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

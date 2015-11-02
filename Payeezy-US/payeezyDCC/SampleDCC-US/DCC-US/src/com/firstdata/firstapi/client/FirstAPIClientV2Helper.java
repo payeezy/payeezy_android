@@ -1256,8 +1256,8 @@ System.out.println("In primary\n");
 
 }
 	public TransactionResponse doSecondaryTransactionGD(TransactionRequest trans)throws Exception {
-		String url="https://api-qa.payeezy.com/v1"+"/transactions/{id}";
-		//String url="https://api-cert.payeezy.com/v1"+"/transactions/{id}";
+		//String url="https://api-qa.payeezy.com/v1"+"/transactions/{id}";
+		String url="https://api-cert.payeezy.com/v1"+"/transactions/{id}";
 		String payload = getJSONObject(trans);
 
 		System.out.println("payload="+payload);

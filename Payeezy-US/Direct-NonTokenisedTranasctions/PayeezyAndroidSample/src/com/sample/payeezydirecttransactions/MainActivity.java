@@ -361,7 +361,7 @@ public class MainActivity extends Activity {
 
 		//l2
 
-		"level2":{"customer_ref":"customer1","tax1_amount":"10","tax1_number":"2","tax2_amount":"5","tax2_number":"3"},
+
 
 		String level2_tax2_number = "3";
 		String level2_tax2_amount = "5";
@@ -456,9 +456,24 @@ public class MainActivity extends Activity {
 	public void onRecurring(View view)
 	{
 		Toast.makeText(getApplicationContext(), " Recurring Clicked", Toast.LENGTH_SHORT).show();
+		String amount="1100";
+		String currency="USD";
+		String paymentMethod="credit_card";
+
+		String cvv="123";
+		String expiryDate="1220";
+		String Name="Test Data";
+		String Type="visa";
+		String number="4012000033330026";
+
+		String state="NY";
+		String addressline1="sss";
+		String zip="11747";
+		String country="US";
+		String city="NY";
 		//CallCapture();
 		RequestTask rTask = new RequestTask(getApplicationContext());
-		rTask.execute("recurring");
+		rTask.execute("recurring",amount, currency, paymentMethod, cvv, expiryDate, Name, Type, number, state, addressline1, zip, country, city);
 		//Toast.makeText(getApplicationContext(), " Capture Completed", Toast.LENGTH_SHORT).show();
 	}
     
