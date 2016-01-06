@@ -19,7 +19,7 @@ We appreciate the time you take to try out our sample code and welcome your feed
 
 ## Terms of Use
 
-Terms and conditions for using Payeezy IOS SDK: Please see [Payeezy Terms & conditions](https://developer.payeezy.com/terms-use)
+Terms and conditions for using Payeezy Android SDK: Please see [Payeezy Terms & conditions](https://developer.payeezy.com/terms-use)
  
 ### License
-The Payeezy IOS SDK is open source and available under the MIT license. See the LICENSE file for more info.
+The Payeezy Android SDK is open source and available under the MIT license. See the LICENSE file for more info.
